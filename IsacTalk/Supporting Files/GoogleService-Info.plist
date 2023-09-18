@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>500943939676-gesjudohbghp6a7gu90e2mso9g1ndjtn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.500943939676-gesjudohbghp6a7gu90e2mso9g1ndjtn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXg1fClqrev04rBx_HVwRYbs2btzV4Y4M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>500943939676</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.isac.IsacTalk</string>
+	<key>PROJECT_ID</key>
+	<string>isactalk-d979f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>isactalk-d979f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:500943939676:ios:94b578f517b034e996de99</string>
+	<key>DATABASE_URL</key>
+	<string>https://isactalk-d979f.firebaseio.com</string>
+</dict>
+</plist>
