@@ -83,3 +83,9 @@ extension ContentSizeCategory: Comparable {}
  }
  } */
 
+@available(iOS 13.0, *)
+extension View {
+    public func endEditing(_ force: Bool) {
+        UIApplication.shared.windows.forEach { $0.endEditing(force)}
+    }
+}

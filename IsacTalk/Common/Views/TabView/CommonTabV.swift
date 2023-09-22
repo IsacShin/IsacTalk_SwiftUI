@@ -46,7 +46,7 @@ struct CommonTabV: View {
             }
         } else {
             withAnimation {
-                Text("로그인뷰")
+                LoginV()
                     .transition(.move(edge: .bottom))
                     .onReceive(AppManager.isLogin) {
                         isLogin = $0

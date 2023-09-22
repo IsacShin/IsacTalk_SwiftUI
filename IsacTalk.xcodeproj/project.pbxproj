@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3E8858A5CE061609D5AAD1 /* Pods_IsacTalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452F127D1CE1F415693D16BC /* Pods_IsacTalkTests.framework */; };
 		4B16AC942AB815C400928539 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16AC932AB815C400928539 /* Defines.swift */; };
 		4B16AC972AB815F300928539 /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16AC962AB815F300928539 /* UIApplication+Ext.swift */; };
 		4B16AC992AB8167900928539 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16AC982AB8167900928539 /* AlertType.swift */; };
@@ -14,6 +15,8 @@
 		4B16AC9F2AB8189000928539 /* CommonTabV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16AC9E2AB8189000928539 /* CommonTabV.swift */; };
 		4B16ACA32AB81A6400928539 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16ACA22AB81A6400928539 /* AppManager.swift */; };
 		4B16ACA52AB81B5C00928539 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16ACA42AB81B5C00928539 /* View+Ext.swift */; };
+		4B35CB9F2ABD4D2500771148 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */; };
+		4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBA02ABD4F1800771148 /* DeviceType.swift */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -37,6 +40,15 @@
 		4BB8C5D82AB8692A00F5868C /* AccessGuideV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5D72AB8692900F5868C /* AccessGuideV.swift */; };
 		4BB8C5DB2AB8696300F5868C /* AccessGuideVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5DA2AB8696300F5868C /* AccessGuideVM.swift */; };
 		4BB8C5DD2AB86A0300F5868C /* ThemeBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5DC2AB86A0300F5868C /* ThemeBtnStyle.swift */; };
+		4BB8C5E02ABBF1CC00F5868C /* CommonLoadingV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5DF2ABBF1CC00F5868C /* CommonLoadingV.swift */; };
+		4BB8C5E22ABBF20E00F5868C /* CommonIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5E12ABBF20E00F5868C /* CommonIndicator.swift */; };
+		4BB8C5E52ABC12F700F5868C /* LoginV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5E42ABC12F700F5868C /* LoginV.swift */; };
+		4BB8C5E82ABC13E600F5868C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5E72ABC13E600F5868C /* LoginVM.swift */; };
+		4BB8C5ED2ABC453300F5868C /* IdLoginV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5EC2ABC453300F5868C /* IdLoginV.swift */; };
+		4BB8C5F02ABC45D900F5868C /* CustomTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB8C5EF2ABC45D900F5868C /* CustomTextField */; };
+		4BB8C5F22ABC478E00F5868C /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8C5F12ABC478E00F5868C /* KeyboardManager.swift */; };
+		5AA8662ED6983DEA361FBE2B /* Pods_IsacTalk_IsacTalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF9B02D7232B60B5CFC884 /* Pods_IsacTalk_IsacTalkUITests.framework */; };
+		F12CEDDE559CB06EB3911BEA /* Pods_IsacTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9598D278EC1DDFD451C31F2E /* Pods_IsacTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		452F127D1CE1F415693D16BC /* Pods_IsacTalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsacTalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		468E8114F7A72DA2C9CCA1D6 /* Pods-IsacTalk-IsacTalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalk-IsacTalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-IsacTalk-IsacTalkUITests/Pods-IsacTalk-IsacTalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B16AC932AB815C400928539 /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		4B16AC962AB815F300928539 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
 		4B16AC982AB8167900928539 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
@@ -64,6 +78,8 @@
 		4B16AC9E2AB8189000928539 /* CommonTabV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTabV.swift; sourceTree = "<group>"; };
 		4B16ACA22AB81A6400928539 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		4B16ACA42AB81B5C00928539 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		4B35CBA02ABD4F1800771148 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +95,19 @@
 		4BB8C5D72AB8692900F5868C /* AccessGuideV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessGuideV.swift; sourceTree = "<group>"; };
 		4BB8C5DA2AB8696300F5868C /* AccessGuideVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessGuideVM.swift; sourceTree = "<group>"; };
 		4BB8C5DC2AB86A0300F5868C /* ThemeBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeBtnStyle.swift; sourceTree = "<group>"; };
+		4BB8C5DF2ABBF1CC00F5868C /* CommonLoadingV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLoadingV.swift; sourceTree = "<group>"; };
+		4BB8C5E12ABBF20E00F5868C /* CommonIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonIndicator.swift; sourceTree = "<group>"; };
+		4BB8C5E42ABC12F700F5868C /* LoginV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginV.swift; sourceTree = "<group>"; };
+		4BB8C5E72ABC13E600F5868C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		4BB8C5EC2ABC453300F5868C /* IdLoginV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdLoginV.swift; sourceTree = "<group>"; };
+		4BB8C5F12ABC478E00F5868C /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		906CBA2BF7B329F357C3BAFF /* Pods-IsacTalk-IsacTalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalk-IsacTalkUITests.release.xcconfig"; path = "Target Support Files/Pods-IsacTalk-IsacTalkUITests/Pods-IsacTalk-IsacTalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9598D278EC1DDFD451C31F2E /* Pods_IsacTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsacTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96FF9B02D7232B60B5CFC884 /* Pods_IsacTalk_IsacTalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsacTalk_IsacTalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06A2D6FFA398FB6858D1EB6 /* Pods-IsacTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalk.release.xcconfig"; path = "Target Support Files/Pods-IsacTalk/Pods-IsacTalk.release.xcconfig"; sourceTree = "<group>"; };
+		D16C723F69D09434F6DA6346 /* Pods-IsacTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalk.debug.xcconfig"; path = "Target Support Files/Pods-IsacTalk/Pods-IsacTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		D463ECF6C9113BB676A1F1A8 /* Pods-IsacTalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalkTests.debug.xcconfig"; path = "Target Support Files/Pods-IsacTalkTests/Pods-IsacTalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF49FD29D30C9CBC4DDACC1 /* Pods-IsacTalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsacTalkTests.release.xcconfig"; path = "Target Support Files/Pods-IsacTalkTests/Pods-IsacTalkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +122,12 @@
 				4BB8C5BB2AB81E5900F5868C /* FirebaseAnalytics in Frameworks */,
 				4BB8C5C12AB81E5900F5868C /* FirebaseDatabase in Frameworks */,
 				4BB8C5C72AB81E5900F5868C /* FirebaseFirestoreSwift in Frameworks */,
+				4BB8C5F02ABC45D900F5868C /* CustomTextField in Frameworks */,
 				4BB8C5BD2AB81E5900F5868C /* FirebaseAuth in Frameworks */,
 				4BB8C5D02AB81F0A00F5868C /* SDWebImageSwiftUI in Frameworks */,
 				4BB8C5C32AB81E5900F5868C /* FirebaseDynamicLinks in Frameworks */,
 				4BB8C5C52AB81E5900F5868C /* FirebaseFirestore in Frameworks */,
+				F12CEDDE559CB06EB3911BEA /* Pods_IsacTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3E8858A5CE061609D5AAD1 /* Pods_IsacTalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA8662ED6983DEA361FBE2B /* Pods_IsacTalk_IsacTalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +155,7 @@
 			children = (
 				4B16AC962AB815F300928539 /* UIApplication+Ext.swift */,
 				4B16ACA42AB81B5C00928539 /* View+Ext.swift */,
+				4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,6 +172,7 @@
 		4B16AC9D2AB8188200928539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BB8C5DE2ABBF1B800F5868C /* LoadingView */,
 				4B16ACA02AB8189800928539 /* TabView */,
 				4BB8C5DC2AB86A0300F5868C /* ThemeBtnStyle.swift */,
 			);
@@ -157,6 +192,7 @@
 			children = (
 				4B16ACA22AB81A6400928539 /* AppManager.swift */,
 				4BB8C5D42AB863D800F5868C /* NaviManager.swift */,
+				4BB8C5F12ABC478E00F5868C /* KeyboardManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -168,6 +204,8 @@
 				4B95C7092AB80E73003CF206 /* IsacTalkTests */,
 				4B95C7132AB80E73003CF206 /* IsacTalkUITests */,
 				4B95C6F72AB80E72003CF206 /* Products */,
+				F98B65A3155C7661D89281C6 /* Pods */,
+				D85712E510CCDA8DE686DA26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +255,7 @@
 				4B16AC952AB815D900928539 /* Extensions */,
 				4B16AC932AB815C400928539 /* Defines.swift */,
 				4B16AC982AB8167900928539 /* AlertType.swift */,
+				4B35CBA02ABD4F1800771148 /* DeviceType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -224,6 +263,7 @@
 		4B95C7242AB81351003CF206 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				4BB8C5E32ABBF2B400F5868C /* Login */,
 				4BB8C5D62AB8645900F5868C /* AccessGuide */,
 				4B16AC9A2AB8178700928539 /* Splash */,
 				4B95C7262AB81384003CF206 /* Launch */,
@@ -281,6 +321,56 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
+		4BB8C5DE2ABBF1B800F5868C /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				4BB8C5DF2ABBF1CC00F5868C /* CommonLoadingV.swift */,
+				4BB8C5E12ABBF20E00F5868C /* CommonIndicator.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		4BB8C5E32ABBF2B400F5868C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4BB8C5E62ABC13DB00F5868C /* VM */,
+				4BB8C5E42ABC12F700F5868C /* LoginV.swift */,
+				4BB8C5EC2ABC453300F5868C /* IdLoginV.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4BB8C5E62ABC13DB00F5868C /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				4BB8C5E72ABC13E600F5868C /* LoginVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		D85712E510CCDA8DE686DA26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9598D278EC1DDFD451C31F2E /* Pods_IsacTalk.framework */,
+				96FF9B02D7232B60B5CFC884 /* Pods_IsacTalk_IsacTalkUITests.framework */,
+				452F127D1CE1F415693D16BC /* Pods_IsacTalkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F98B65A3155C7661D89281C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D16C723F69D09434F6DA6346 /* Pods-IsacTalk.debug.xcconfig */,
+				A06A2D6FFA398FB6858D1EB6 /* Pods-IsacTalk.release.xcconfig */,
+				468E8114F7A72DA2C9CCA1D6 /* Pods-IsacTalk-IsacTalkUITests.debug.xcconfig */,
+				906CBA2BF7B329F357C3BAFF /* Pods-IsacTalk-IsacTalkUITests.release.xcconfig */,
+				D463ECF6C9113BB676A1F1A8 /* Pods-IsacTalkTests.debug.xcconfig */,
+				DEF49FD29D30C9CBC4DDACC1 /* Pods-IsacTalkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,9 +378,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B95C71A2AB80E73003CF206 /* Build configuration list for PBXNativeTarget "IsacTalk" */;
 			buildPhases = (
+				C5400FCCB252BD35613F32C4 /* [CP] Check Pods Manifest.lock */,
 				4B95C6F22AB80E72003CF206 /* Sources */,
 				4B95C6F32AB80E72003CF206 /* Frameworks */,
 				4B95C6F42AB80E72003CF206 /* Resources */,
+				DA9D7F13DAED34FE9E936B39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +401,7 @@
 				4BB8C5CA2AB81E5900F5868C /* FirebaseRemoteConfig */,
 				4BB8C5CC2AB81E5900F5868C /* FirebaseStorage */,
 				4BB8C5CF2AB81F0A00F5868C /* SDWebImageSwiftUI */,
+				4BB8C5EF2ABC45D900F5868C /* CustomTextField */,
 			);
 			productName = IsacTalk;
 			productReference = 4B95C6F62AB80E72003CF206 /* IsacTalk.app */;
@@ -318,6 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B95C71D2AB80E73003CF206 /* Build configuration list for PBXNativeTarget "IsacTalkTests" */;
 			buildPhases = (
+				B67FB1AF4BF56B164AD93948 /* [CP] Check Pods Manifest.lock */,
 				4B95C7022AB80E73003CF206 /* Sources */,
 				4B95C7032AB80E73003CF206 /* Frameworks */,
 				4B95C7042AB80E73003CF206 /* Resources */,
@@ -336,9 +430,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B95C7202AB80E73003CF206 /* Build configuration list for PBXNativeTarget "IsacTalkUITests" */;
 			buildPhases = (
+				55A7EB98C38A44BC1CE4B205 /* [CP] Check Pods Manifest.lock */,
 				4B95C70C2AB80E73003CF206 /* Sources */,
 				4B95C70D2AB80E73003CF206 /* Frameworks */,
 				4B95C70E2AB80E73003CF206 /* Resources */,
+				5DF8E6040B01D11290A66ABE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +481,7 @@
 			packageReferences = (
 				4BB8C5B92AB81E5900F5868C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */,
 			);
 			productRefGroup = 4B95C6F72AB80E72003CF206 /* Products */;
 			projectDirPath = "";
@@ -424,6 +521,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55A7EB98C38A44BC1CE4B205 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IsacTalk-IsacTalkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DF8E6040B01D11290A66ABE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IsacTalk-IsacTalkUITests/Pods-IsacTalk-IsacTalkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IsacTalk-IsacTalkUITests/Pods-IsacTalk-IsacTalkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IsacTalk-IsacTalkUITests/Pods-IsacTalk-IsacTalkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B67FB1AF4BF56B164AD93948 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IsacTalkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5400FCCB252BD35613F32C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IsacTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA9D7F13DAED34FE9E936B39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IsacTalk/Pods-IsacTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IsacTalk/Pods-IsacTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IsacTalk/Pods-IsacTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B95C6F22AB80E72003CF206 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -431,17 +631,25 @@
 			files = (
 				4B16ACA52AB81B5C00928539 /* View+Ext.swift in Sources */,
 				4BB8C5DB2AB8696300F5868C /* AccessGuideVM.swift in Sources */,
+				4BB8C5E02ABBF1CC00F5868C /* CommonLoadingV.swift in Sources */,
+				4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */,
+				4BB8C5E22ABBF20E00F5868C /* CommonIndicator.swift in Sources */,
 				4BB8C5D52AB863D800F5868C /* NaviManager.swift in Sources */,
 				4B16ACA32AB81A6400928539 /* AppManager.swift in Sources */,
+				4BB8C5E52ABC12F700F5868C /* LoginV.swift in Sources */,
 				4BB8C5D82AB8692A00F5868C /* AccessGuideV.swift in Sources */,
 				4B16AC972AB815F300928539 /* UIApplication+Ext.swift in Sources */,
+				4BB8C5F22ABC478E00F5868C /* KeyboardManager.swift in Sources */,
+				4BB8C5ED2ABC453300F5868C /* IdLoginV.swift in Sources */,
 				4B16AC992AB8167900928539 /* AlertType.swift in Sources */,
 				4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */,
 				4B16AC9C2AB817E000928539 /* SplashV.swift in Sources */,
 				4B16AC942AB815C400928539 /* Defines.swift in Sources */,
+				4B35CB9F2ABD4D2500771148 /* UINavigationController+Ext.swift in Sources */,
 				4B16AC9F2AB8189000928539 /* CommonTabV.swift in Sources */,
 				4BB8C5D32AB84FE500F5868C /* SplashVM.swift in Sources */,
 				4BB8C5DD2AB86A0300F5868C /* ThemeBtnStyle.swift in Sources */,
+				4BB8C5E82ABC13E600F5868C /* LoginVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +802,7 @@
 		};
 		4B95C71B2AB80E73003CF206 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D16C723F69D09434F6DA6346 /* Pods-IsacTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -633,6 +842,7 @@
 		};
 		4B95C71C2AB80E73003CF206 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06A2D6FFA398FB6858D1EB6 /* Pods-IsacTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -672,6 +882,7 @@
 		};
 		4B95C71E2AB80E73003CF206 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D463ECF6C9113BB676A1F1A8 /* Pods-IsacTalkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -692,6 +903,7 @@
 		};
 		4B95C71F2AB80E73003CF206 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF49FD29D30C9CBC4DDACC1 /* Pods-IsacTalkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -712,6 +924,7 @@
 		};
 		4B95C7212AB80E73003CF206 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 468E8114F7A72DA2C9CCA1D6 /* Pods-IsacTalk-IsacTalkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -730,6 +943,7 @@
 		};
 		4B95C7222AB80E73003CF206 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 906CBA2BF7B329F357C3BAFF /* Pods-IsacTalk-IsacTalkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -804,6 +1018,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/esatgozcu/SwiftUI-Custom-TextField";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -861,6 +1083,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		4BB8C5EF2ABC45D900F5868C /* CustomTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */;
+			productName = CustomTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
