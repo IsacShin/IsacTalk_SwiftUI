@@ -13,21 +13,26 @@ struct AppManager {
     static var subscriptions = Set<AnyCancellable>()
 
     static let isLogin = PassthroughSubject<Bool, Never>()
-    
+    static var loginUser: ChatUser?
+
     static func isLoggedIn() -> Bool {
-        return UDF.string(forKey: "idToken") != nil
+        return FirebaseManager.shared.auth.currentUser != nil
     }
     
     static func logout(completion: (() -> Void)?) {
-        UDF.removeObject(forKey: "idToken")
-        UDF.removeObject(forKey: "userName")
-        UDF.removeObject(forKey: "memId")
-        UDF.removeObject(forKey: "profileImg")
-        AppManager.isLogin.send(false)
+        FirebaseManager.shared.auth.currentUser?.delete(completion: { err in
+            if let err = err {
+                print(err)
+            }
+            
+            try! FirebaseManager.shared.auth.signOut()
+            AppManager.isLogin.send(false)
+            
+            if let completion = completion {
+                completion()
+            }
+        })
         
-        if let completion = completion {
-            completion()
-        }
     }
     
     static func removeId(id: String, completion: (() -> Void)?) {

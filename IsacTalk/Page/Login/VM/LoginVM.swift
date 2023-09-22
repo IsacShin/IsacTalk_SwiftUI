@@ -24,55 +24,40 @@ class LoginVM: ObservableObject {
     func idLogin(id: String?, password: String?, completion: @escaping () -> Void) {
         guard let id = id, let password = password else { return }
         
-//        LoginApiService.getMember(id: id, password: password)
-//            .sink { complete in
-//                print("LoginVM completion: \(complete)")
-//                switch complete {
-//                case .finished:
-//                    print("LoginVM completion: finished")
-//                    
-//                case .failure(let error):
-//                    print("LoginVM completion: failure(\(error))")
-//                    self.isLoginFailed = true
-//                }
-//            } receiveValue: { members in
-//                guard let member = members.list?.first else {
-//                    self.isLoginFailed = true
-//                    return
-//                }
-//                
-//                self.loginUser = member
-//                AppManager.loginUser = self.loginUser
-//                
-//                self.loginSuccess(
-//                    token: "\(member.uuid)",
-//                    name: member.name,
-//                    id: member.memid
-//                )
-//                
-//                self.isLoginFailed = false
-//                completion()
-//            }
-//            .store(in: &subscriptions)
+        FirebaseManager.shared.auth.signIn(withEmail: id, password: password) {
+            result, err in
+            if let err = err {
+                print("Failed to login User", err)
+                self.isLoginFailed = true
+                return
+            }
+            
+            print("Successfully login user: \(result?.user.uid ?? "")")
+            self.fetchCurrentUser()
+        }
         
     }
     
-    
-    private func loginSuccess(token: String?, name: String?, id: String?) {
-        guard let token = token,
-              let name = name,
-              let id = id else { return }
+    private func fetchCurrentUser() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            return
+        }
 
-        UDF.setValue(token, forKey: "idToken")
-        UDF.setValue(id, forKey: "memId")
-        UDF.setValue(name, forKey: "userName")
-        
-//        if let pImg = self.loginUser?.profileUrl {
-//            UDF.set(pImg, forKey: "profileImg")
-//        }
-        
-        AppManager.isLogin.send(true)
-        
+        FirebaseManager.shared.firestore.collection("users")
+            .document(uid).getDocument { snapshot, err in
+                if let err = err {
+                    print("Failed to fetch current user:", err)
+                }
+                
+                guard let data = snapshot?.data() else {
+                    return
+                }
+                self.isLoginFailed = false
+
+                AppManager.loginUser = .init(data: data)
+                AppManager.isLogin.send(true)
+
+            }
     }
     
 }

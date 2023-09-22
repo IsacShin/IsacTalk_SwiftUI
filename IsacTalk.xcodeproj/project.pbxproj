@@ -17,6 +17,12 @@
 		4B16ACA52AB81B5C00928539 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16ACA42AB81B5C00928539 /* View+Ext.swift */; };
 		4B35CB9F2ABD4D2500771148 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */; };
 		4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBA02ABD4F1800771148 /* DeviceType.swift */; };
+		4B35CBA32ABD62C000771148 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBA22ABD62C000771148 /* FirebaseManager.swift */; };
+		4B35CBA62ABD637D00771148 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBA52ABD637D00771148 /* ChatUser.swift */; };
+		4B35CBA92ABD645C00771148 /* JoinV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBA82ABD645C00771148 /* JoinV.swift */; };
+		4B35CBAC2ABD647300771148 /* JoinVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBAB2ABD647300771148 /* JoinVM.swift */; };
+		4B35CBAE2ABD68B900771148 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBAD2ABD68B900771148 /* String+Ext.swift */; };
+		4B35CBB12ABD6A3C00771148 /* CommonImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35CBB02ABD6A3C00771148 /* CommonImagePicker.swift */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -80,6 +86,12 @@
 		4B16ACA42AB81B5C00928539 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		4B35CBA02ABD4F1800771148 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		4B35CBA22ABD62C000771148 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		4B35CBA52ABD637D00771148 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		4B35CBA82ABD645C00771148 /* JoinV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinV.swift; sourceTree = "<group>"; };
+		4B35CBAB2ABD647300771148 /* JoinVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVM.swift; sourceTree = "<group>"; };
+		4B35CBAD2ABD68B900771148 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		4B35CBB02ABD6A3C00771148 /* CommonImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonImagePicker.swift; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +168,7 @@
 				4B16AC962AB815F300928539 /* UIApplication+Ext.swift */,
 				4B16ACA42AB81B5C00928539 /* View+Ext.swift */,
 				4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */,
+				4B35CBAD2ABD68B900771148 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 		4B16AC9D2AB8188200928539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B35CBAF2ABD6A2600771148 /* YPImagePicker */,
 				4BB8C5DE2ABBF1B800F5868C /* LoadingView */,
 				4B16ACA02AB8189800928539 /* TabView */,
 				4BB8C5DC2AB86A0300F5868C /* ThemeBtnStyle.swift */,
@@ -193,8 +207,42 @@
 				4B16ACA22AB81A6400928539 /* AppManager.swift */,
 				4BB8C5D42AB863D800F5868C /* NaviManager.swift */,
 				4BB8C5F12ABC478E00F5868C /* KeyboardManager.swift */,
+				4B35CBA22ABD62C000771148 /* FirebaseManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4B35CBA42ABD637200771148 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B35CBA52ABD637D00771148 /* ChatUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B35CBA72ABD645200771148 /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				4B35CBAA2ABD646900771148 /* VM */,
+				4B35CBA82ABD645C00771148 /* JoinV.swift */,
+			);
+			path = Join;
+			sourceTree = "<group>";
+		};
+		4B35CBAA2ABD646900771148 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				4B35CBAB2ABD647300771148 /* JoinVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		4B35CBAF2ABD6A2600771148 /* YPImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4B35CBB02ABD6A3C00771148 /* CommonImagePicker.swift */,
+			);
+			path = YPImagePicker;
 			sourceTree = "<group>";
 		};
 		4B95C6ED2AB80E72003CF206 = {
@@ -250,6 +298,7 @@
 		4B95C7232AB8134A003CF206 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4B35CBA42ABD637200771148 /* Model */,
 				4B16ACA12AB81A4B00928539 /* Managers */,
 				4B16AC9D2AB8188200928539 /* Views */,
 				4B16AC952AB815D900928539 /* Extensions */,
@@ -263,6 +312,7 @@
 		4B95C7242AB81351003CF206 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				4B35CBA72ABD645200771148 /* Join */,
 				4BB8C5E32ABBF2B400F5868C /* Login */,
 				4BB8C5D62AB8645900F5868C /* AccessGuide */,
 				4B16AC9A2AB8178700928539 /* Splash */,
@@ -633,15 +683,20 @@
 				4BB8C5DB2AB8696300F5868C /* AccessGuideVM.swift in Sources */,
 				4BB8C5E02ABBF1CC00F5868C /* CommonLoadingV.swift in Sources */,
 				4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */,
+				4B35CBA32ABD62C000771148 /* FirebaseManager.swift in Sources */,
 				4BB8C5E22ABBF20E00F5868C /* CommonIndicator.swift in Sources */,
 				4BB8C5D52AB863D800F5868C /* NaviManager.swift in Sources */,
 				4B16ACA32AB81A6400928539 /* AppManager.swift in Sources */,
 				4BB8C5E52ABC12F700F5868C /* LoginV.swift in Sources */,
 				4BB8C5D82AB8692A00F5868C /* AccessGuideV.swift in Sources */,
+				4B35CBA62ABD637D00771148 /* ChatUser.swift in Sources */,
 				4B16AC972AB815F300928539 /* UIApplication+Ext.swift in Sources */,
+				4B35CBA92ABD645C00771148 /* JoinV.swift in Sources */,
+				4B35CBB12ABD6A3C00771148 /* CommonImagePicker.swift in Sources */,
 				4BB8C5F22ABC478E00F5868C /* KeyboardManager.swift in Sources */,
 				4BB8C5ED2ABC453300F5868C /* IdLoginV.swift in Sources */,
 				4B16AC992AB8167900928539 /* AlertType.swift in Sources */,
+				4B35CBAE2ABD68B900771148 /* String+Ext.swift in Sources */,
 				4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */,
 				4B16AC9C2AB817E000928539 /* SplashV.swift in Sources */,
 				4B16AC942AB815C400928539 /* Defines.swift in Sources */,
@@ -650,6 +705,7 @@
 				4BB8C5D32AB84FE500F5868C /* SplashVM.swift in Sources */,
 				4BB8C5DD2AB86A0300F5868C /* ThemeBtnStyle.swift in Sources */,
 				4BB8C5E82ABC13E600F5868C /* LoginVM.swift in Sources */,
+				4B35CBAC2ABD647300771148 /* JoinVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

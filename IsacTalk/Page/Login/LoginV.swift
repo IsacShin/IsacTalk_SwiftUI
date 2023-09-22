@@ -39,8 +39,7 @@ struct LoginV: View {
                 Spacer().frame(height: 10)
                 
                 NavigationLink {
-//                    JoinV()
-                    Text("조인")
+                    JoinV()
                 } label: {
                     Text("회원가입")
                         .font(.system(size: 17))
