@@ -77,28 +77,41 @@ class JoinVM: ObservableObject {
               let email = info["email"] as? String,
               let name = info["name"] as? String else { return }
         
-        let userData = [
-            "email": email,
-            "name" : name,
-            "uid": uid,
-            "profileImageUrl": profileImgUrl.absoluteString,
-            "friends": []
-        ] as [String: Any]
-
-        FirebaseManager.shared.firestore.collection("users")
-            .document(uid).setData(userData) { err in
-                if let err = err {
-                    print(err)
-                    AppManager.logout {
-                        self.isJoinFailed = true
-                    }
-                    return
+        FirebaseManager.shared.messaging.token { result, error in
+            if let error = error {
+                print("Error fetching remote instance ID: \(error)")
+                AppManager.logout {
+                    self.isJoinFailed = true
                 }
-                
-                print("Success")
-                self.isSuccess = true
-                completion()
+            } else if let result = result {
+                print("Remote instance ID token: \(result)")
+                let userData = [
+                    "email": email,
+                    "name" : name,
+                    "uid": uid,
+                    "profileImageUrl": profileImgUrl.absoluteString,
+                    "friends": [],
+                    "pushToken": result
+                ] as [String: Any]
+
+                FirebaseManager.shared.firestore.collection("users")
+                    .document(uid).setData(userData) { err in
+                        if let err = err {
+                            print(err)
+                            AppManager.logout {
+                                self.isJoinFailed = true
+                            }
+                            return
+                        }
+                        
+                        print("Success")
+                        self.isSuccess = true
+                        completion()
+                    }
             }
+        }
+        
+        
     }
     
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Hex
 
 enum TabType {
     case HOME, MYPAGE
@@ -14,6 +15,7 @@ enum TabType {
 struct CommonTabV: View {
     init() {
         UITabBar.appearance().unselectedItemTintColor = .lightGray
+        UITabBar.appearance().tintColor = UIColor(hex: "48CFAD")
         UITabBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = UIImage()
@@ -26,21 +28,22 @@ struct CommonTabV: View {
     var body: some View {
         if isLogin {
             TabView(selection: $selectTab) {
-                Text("Home")
+                HomeV()
                     .tabItem {
-                        Image(systemName: "map")
+                        Image(systemName: "person.3")
                         Text("Home")
                     }
                     .tag(TabType.HOME)
 
                 Text("My")
                     .tabItem {
-                        Image(systemName: "list.bullet.below.rectangle")
+                        Image(systemName: "person.circle")
                         Text("My")
                     }
                     .tag(TabType.MYPAGE)
 
-            }            
+            }
+            .accentColor(MAIN_COLOR)
             .onReceive(AppManager.isLogin) {
                 isLogin = $0
             }

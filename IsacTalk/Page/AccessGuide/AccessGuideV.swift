@@ -40,6 +40,8 @@ struct AccessGuideV: View {
 
                     
                     Spacer().frame(height: 41)
+                    AccessElementV(image: "bell.badge", title: "알림", subTitle: "푸시 알림 권한")
+                    Spacer().frame(height: 20)
                     AccessElementV(image: "camera.fill", title: "카메라", subTitle: "카메라 이용 권한")
                     Spacer().frame(height: 20)
                     AccessElementV(image: "circle.inset.filled", title: "광고 허용", subTitle: "광고 접근 허용")
