@@ -16,10 +16,10 @@ class SplashVM: ObservableObject {
     var nextAction = PassthroughSubject<LaunchState, Never>()
     
     func startLaunch() {
-//        AppManager.logout(completion: nil)
         if UDF.bool(forKey: "firstLaunch") {
             self.nextAction.send(.yet)
         } else {
+            AppManager.logout(completion: nil)
             self.nextAction.send(.first)
         }
     }

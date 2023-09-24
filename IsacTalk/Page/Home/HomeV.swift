@@ -53,6 +53,10 @@ struct HomeV: View {
                     .offset(y: -10)
                 ,alignment: .bottom)
             .navigationBarHidden(true)
+            
+            if isShowPlusFriends {
+                AddFriendsV(isShowPlusFriends: $isShowPlusFriends)
+            }
         }
         
     }
@@ -114,7 +118,9 @@ struct HomeV: View {
             
             Spacer()
             Button {
-                isShowPlusFriends.toggle()
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    self.isShowPlusFriends.toggle()
+                }
             } label: {
                 VStack {
                     Image(systemName: "person.badge.plus")

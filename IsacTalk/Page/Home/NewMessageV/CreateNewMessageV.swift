@@ -30,38 +30,55 @@ struct CreateNewMessageV: View {
                     MAIN_COLOR
                         .frame(height: g.safeAreaInsets.top, alignment: .top)
                         .ignoresSafeArea()
+                    
+                    if vm.users.count > 0 {
+                        ScrollView {
+                            VStack {
+                                Spacer().frame(height: 20)
+                                ForEach(vm.users) { user in
+                                    Button {
+                                        dismiss()
+                                        didSelectNewUser(user)
+                                    } label: {
+                                        HStack(spacing: 16) {
+                                            WebImage(url: URL(string: user.profileImageUrl))
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 50, height: 50)
+                                                .clipped()
+                                                .cornerRadius(50)
+                                                .overlay(Circle().stroke(style: .init(lineWidth: 2)).foregroundColor(Color(.label)))
+                                            Text("\(user.name)(\(user.email))")
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                        }
+                                        .padding(.horizontal)
+                                    }
+
+                                    
+                                    Divider()
+                                        .padding(8)
+                                }
+                            }
+                            
+                        }
+                    } else {
+                        VStack(alignment: .center) {
+                            Spacer()
+                            Text("코드전송을 통해 친구를 추가 해보세요")
+                                .font(.system(size: 17))
+                            Spacer()
+                        }
+                        .offset(y: -40)
+                        .frame(minWidth: g.size.width, minHeight: g.size.height)
+                    }
+                    
                 }
                 
-                ScrollView {
-                    Text(vm.errorMsg)
-                    ForEach(vm.users) { user in
-                        Button {
-                            dismiss()
-                            didSelectNewUser(user)
-                        } label: {
-                            HStack(spacing: 16) {
-                                WebImage(url: URL(string: user.profileImageUrl))
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 50, height: 50)
-                                    .clipped()
-                                    .cornerRadius(50)
-                                    .overlay(Circle().stroke(style: .init(lineWidth: 2)).foregroundColor(Color(.label)))
-                                Text(user.email)
-                                    .foregroundColor(Color(.label))
-                                Spacer()
-                            }
-                            .padding(.horizontal)
-                        }
-
-                        
-                        Divider()
-                            .padding(8)
-                    }
-                }
+                
             }
-            
             .navigationTitle("친구 목록")
+            .navigationBarHidden(false)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {

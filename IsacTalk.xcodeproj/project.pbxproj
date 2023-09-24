@@ -43,6 +43,9 @@
 		4B35CBDB2ABE910300771148 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 4B35CBDA2ABE910300771148 /* FirebasePerformance */; };
 		4B35CBDD2ABE910300771148 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4B35CBDC2ABE910300771148 /* FirebaseRemoteConfig */; };
 		4B35CBDF2ABE910300771148 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4B35CBDE2ABE910300771148 /* FirebaseStorage */; };
+		4B5569512ABFCC8300F9D29A /* AddFriendsV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569502ABFCC8300F9D29A /* AddFriendsV.swift */; };
+		4B5569542ABFE72500F9D29A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569532ABFE72500F9D29A /* ActivityView.swift */; };
+		4B5569572ABFED3F00F9D29A /* AddFriendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -110,6 +113,9 @@
 		4B35CBBF2ABE8EC600771148 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		4B35CBC12ABE8F5000771148 /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
 		4B35CBC32ABE8F8C00771148 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		4B5569502ABFCC8300F9D29A /* AddFriendsV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsV.swift; sourceTree = "<group>"; };
+		4B5569532ABFE72500F9D29A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsVM.swift; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 		4B16AC9D2AB8188200928539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B5569522ABFE70300F9D29A /* ActivityView */,
 				4B35CBAF2ABD6A2600771148 /* YPImagePicker */,
 				4BB8C5DE2ABBF1B800F5868C /* LoadingView */,
 				4B16ACA02AB8189800928539 /* TabView */,
@@ -272,6 +279,7 @@
 		4B35CBB32ABE863B00771148 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4B55694F2ABFCC6B00F9D29A /* AddFriendsV */,
 				4B35CBBE2ABE8EBE00771148 /* VM */,
 				4B35CBB62ABE8CC900771148 /* NewMessageV */,
 				4B35CBB42ABE864D00771148 /* HomeV.swift */,
@@ -300,6 +308,31 @@
 			isa = PBXGroup;
 			children = (
 				4B35CBBF2ABE8EC600771148 /* HomeVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		4B55694F2ABFCC6B00F9D29A /* AddFriendsV */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569552ABFED3400F9D29A /* VM */,
+				4B5569502ABFCC8300F9D29A /* AddFriendsV.swift */,
+			);
+			path = AddFriendsV;
+			sourceTree = "<group>";
+		};
+		4B5569522ABFE70300F9D29A /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569532ABFE72500F9D29A /* ActivityView.swift */,
+			);
+			path = ActivityView;
+			sourceTree = "<group>";
+		};
+		4B5569552ABFED3400F9D29A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -748,6 +781,7 @@
 				4BB8C5E02ABBF1CC00F5868C /* CommonLoadingV.swift in Sources */,
 				4B35CBBB2ABE8D4400771148 /* CreateNewMessageVM.swift in Sources */,
 				4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */,
+				4B5569542ABFE72500F9D29A /* ActivityView.swift in Sources */,
 				4B35CBA32ABD62C000771148 /* FirebaseManager.swift in Sources */,
 				4BB8C5E22ABBF20E00F5868C /* CommonIndicator.swift in Sources */,
 				4BB8C5D52AB863D800F5868C /* NaviManager.swift in Sources */,
@@ -762,9 +796,11 @@
 				4B35CBB12ABD6A3C00771148 /* CommonImagePicker.swift in Sources */,
 				4B35CBC42ABE8F8C00771148 /* ChatMessage.swift in Sources */,
 				4BB8C5F22ABC478E00F5868C /* KeyboardManager.swift in Sources */,
+				4B5569512ABFCC8300F9D29A /* AddFriendsV.swift in Sources */,
 				4BB8C5ED2ABC453300F5868C /* IdLoginV.swift in Sources */,
 				4B16AC992AB8167900928539 /* AlertType.swift in Sources */,
 				4B35CBC02ABE8EC600771148 /* HomeVM.swift in Sources */,
+				4B5569572ABFED3F00F9D29A /* AddFriendsVM.swift in Sources */,
 				4B35CBAE2ABD68B900771148 /* String+Ext.swift in Sources */,
 				4B35CBB82ABE8CE200771148 /* CreateNewMessageV.swift in Sources */,
 				4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */,

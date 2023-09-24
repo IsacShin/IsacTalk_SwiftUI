@@ -20,11 +20,18 @@ struct AppManager {
     }
     
     static func logout(completion: (() -> Void)?) {
+        try! FirebaseManager.shared.auth.signOut()
+        AppManager.isLogin.send(false)
+        
+    }
+    
+    static func removeId(completion: (() -> Void)?) {
         FirebaseManager.shared.auth.currentUser?.delete(completion: { err in
             if let err = err {
                 print(err)
             }
-            
+            guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+            FirebaseManager.shared.firestore.collection("users").document(uid).delete()
             try! FirebaseManager.shared.auth.signOut()
             AppManager.isLogin.send(false)
             
@@ -32,11 +39,6 @@ struct AppManager {
                 completion()
             }
         })
-        
-    }
-    
-    static func removeId(id: String, completion: (() -> Void)?) {
-        
     }
 }
 
