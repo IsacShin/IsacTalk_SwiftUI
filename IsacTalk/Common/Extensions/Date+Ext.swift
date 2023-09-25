@@ -13,4 +13,10 @@ extension Date {
         dateFormatter.dateFormat = "yy.MM.dd HH:mm"
         return dateFormatter.string(from: self)
     }
+    
+    func formattedTimestampDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyMMddHHmmss"
+        return dateFormatter.string(from: self)
+    }
 }

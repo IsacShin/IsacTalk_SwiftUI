@@ -64,9 +64,23 @@ struct ChatLogV: View {
                                         Spacer()
                                         VStack {
                                             Spacer()
-                                            Text(message.timestamp.formattedDate())
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 11))
+                                            HStack {
+                                                Spacer()
+
+                                                Text("1")
+                                                    .foregroundColor(Color.yellow)
+                                                    .font(.system(size: 11))
+                                                    .opacity(message.isRead ? 0.0 : 1.0)
+                                            }
+                                            
+                                            HStack {
+                                                Spacer()
+
+                                                Text(message.timestamp.formattedDate())
+                                                    .foregroundColor(.white)
+                                                    .font(.system(size: 11))
+                                            }
+                                            
                                         }
                                         HStack {
                                             Text(message.text)
@@ -83,9 +97,22 @@ struct ChatLogV: View {
                                         Spacer()
                                         VStack {
                                             Spacer()
-                                            Text(message.timestamp.formattedDate())
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 11))
+                                            HStack {
+                                                Spacer()
+
+                                                Text("1")
+                                                    .foregroundColor(Color.yellow)
+                                                    .font(.system(size: 11))
+                                                    .opacity(message.isRead ? 0.0 : 1.0)
+                                            }
+                                            
+                                            HStack {
+                                                Spacer()
+
+                                                Text(message.timestamp.formattedDate())
+                                                    .foregroundColor(.white)
+                                                    .font(.system(size: 11))
+                                            }
                                         }
                                         HStack {
                                             WebImage(url: URL(string: message.img))
@@ -111,9 +138,24 @@ struct ChatLogV: View {
                                         .cornerRadius(8)
                                         VStack {
                                             Spacer()
-                                            Text(message.timestamp.formattedDate())
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 11))
+                                            HStack {
+
+                                                Text("1")
+                                                    .foregroundColor(Color.yellow)
+                                                    .font(.system(size: 11))
+                                                    .opacity(message.isRead ? 0.0 : 1.0)
+                                                Spacer()
+
+                                            }
+                                            
+                                            HStack {
+
+                                                Text(message.timestamp.formattedDate())
+                                                    .foregroundColor(.white)
+                                                    .font(.system(size: 11))
+                                                Spacer()
+
+                                            }
                                         }
                                         Spacer()
                                     }
@@ -129,9 +171,24 @@ struct ChatLogV: View {
                                         .cornerRadius(8)
                                         VStack {
                                             Spacer()
-                                            Text(message.timestamp.formattedDate())
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 11))
+                                            HStack {
+
+                                                Text("1")
+                                                    .foregroundColor(Color.yellow)
+                                                    .font(.system(size: 11))
+                                                    .opacity(message.isRead ? 0.0 : 1.0)
+                                                Spacer()
+
+                                            }
+                                            
+                                            HStack {
+
+                                                Text(message.timestamp.formattedDate())
+                                                    .foregroundColor(.white)
+                                                    .font(.system(size: 11))
+                                                Spacer()
+
+                                            }
                                         }
                                         Spacer()
 
@@ -151,6 +208,7 @@ struct ChatLogV: View {
                         scrollViewProxy.scrollTo("Empty", anchor: .bottom)
                     }
                 }
+                
                 .onReceive(self.keyboardManager.updateKeyboardStatus) { updatedStatus in
                     self.keyboardStatus = updatedStatus
                     print("높이: \(keyboardManager.keyboardHeight)")

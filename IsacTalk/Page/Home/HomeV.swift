@@ -178,7 +178,7 @@ struct HomeV: View {
                                             .font(.system(size: 16, weight: .bold))
                                             .foregroundColor(Color(.label))
                                             .multilineTextAlignment(.leading)
-
+                                        Spacer().frame(height: 5)
                                         Text(recentMsg.text)
                                             .font(.system(size: 14))
                                             .foregroundColor(Color(.lightGray))

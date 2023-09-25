@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 struct ChatMessage: Codable, Identifiable {
     @DocumentID var id: String?
     let fromId, toId, text, img: String
+    var isRead: Bool
     let timestamp: Date
 }
 
