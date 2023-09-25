@@ -46,6 +46,10 @@
 		4B5569512ABFCC8300F9D29A /* AddFriendsV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569502ABFCC8300F9D29A /* AddFriendsV.swift */; };
 		4B5569542ABFE72500F9D29A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569532ABFE72500F9D29A /* ActivityView.swift */; };
 		4B5569572ABFED3F00F9D29A /* AddFriendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */; };
+		4B55695A2AC1207000F9D29A /* ChatLogVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569592AC1207000F9D29A /* ChatLogVM.swift */; };
+		4B55695E2AC133F500F9D29A /* ChatLogV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55695D2AC133F500F9D29A /* ChatLogV.swift */; };
+		4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 4B5569632AC146BD00F9D29A /* HidableTabView */; };
+		4B5569662AC1685E00F9D29A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569652AC1685E00F9D29A /* Date+Ext.swift */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -116,6 +120,9 @@
 		4B5569502ABFCC8300F9D29A /* AddFriendsV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsV.swift; sourceTree = "<group>"; };
 		4B5569532ABFE72500F9D29A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsVM.swift; sourceTree = "<group>"; };
+		4B5569592AC1207000F9D29A /* ChatLogVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogVM.swift; sourceTree = "<group>"; };
+		4B55695D2AC133F500F9D29A /* ChatLogV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogV.swift; sourceTree = "<group>"; };
+		4B5569652AC1685E00F9D29A /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,6 +167,7 @@
 				4B35CBD32ABE910300771148 /* FirebaseFirestore in Frameworks */,
 				4BB8C5D02AB81F0A00F5868C /* SDWebImageSwiftUI in Frameworks */,
 				4B35CBD52ABE910300771148 /* FirebaseFirestoreSwift in Frameworks */,
+				4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */,
 				4B35CBCB2ABE910300771148 /* FirebaseCrashlytics in Frameworks */,
 				4B35CBDD2ABE910300771148 /* FirebaseRemoteConfig in Frameworks */,
 				4B35CBD92ABE910300771148 /* FirebaseMessaging in Frameworks */,
@@ -197,6 +205,7 @@
 				4B35CB9E2ABD4D2500771148 /* UINavigationController+Ext.swift */,
 				4B35CBAD2ABD68B900771148 /* String+Ext.swift */,
 				4B35CBBC2ABE8E5100771148 /* Environment+Ext.swift */,
+				4B5569652AC1685E00F9D29A /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +346,23 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
+		4B5569582AC1206000F9D29A /* ChatLog */ = {
+			isa = PBXGroup;
+			children = (
+				4B55695B2AC1313400F9D29A /* VM */,
+				4B55695D2AC133F500F9D29A /* ChatLogV.swift */,
+			);
+			path = ChatLog;
+			sourceTree = "<group>";
+		};
+		4B55695B2AC1313400F9D29A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569592AC1207000F9D29A /* ChatLogVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		4B95C6ED2AB80E72003CF206 = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +431,7 @@
 		4B95C7242AB81351003CF206 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				4B5569582AC1206000F9D29A /* ChatLog */,
 				4B35CBB32ABE863B00771148 /* Home */,
 				4B35CBA72ABD645200771148 /* Join */,
 				4BB8C5E32ABBF2B400F5868C /* Login */,
@@ -549,6 +576,7 @@
 				4B35CBDA2ABE910300771148 /* FirebasePerformance */,
 				4B35CBDC2ABE910300771148 /* FirebaseRemoteConfig */,
 				4B35CBDE2ABE910300771148 /* FirebaseStorage */,
+				4B5569632AC146BD00F9D29A /* HidableTabView */,
 			);
 			productName = IsacTalk;
 			productReference = 4B95C6F62AB80E72003CF206 /* IsacTalk.app */;
@@ -629,6 +657,7 @@
 				4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */,
 				4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
 			);
 			productRefGroup = 4B95C6F72AB80E72003CF206 /* Products */;
 			projectDirPath = "";
@@ -789,11 +818,13 @@
 				4B16ACA32AB81A6400928539 /* AppManager.swift in Sources */,
 				4B35CBBD2ABE8E5100771148 /* Environment+Ext.swift in Sources */,
 				4BB8C5E52ABC12F700F5868C /* LoginV.swift in Sources */,
+				4B55695E2AC133F500F9D29A /* ChatLogV.swift in Sources */,
 				4BB8C5D82AB8692A00F5868C /* AccessGuideV.swift in Sources */,
 				4B35CBA62ABD637D00771148 /* ChatUser.swift in Sources */,
 				4B16AC972AB815F300928539 /* UIApplication+Ext.swift in Sources */,
 				4B35CBA92ABD645C00771148 /* JoinV.swift in Sources */,
 				4B35CBB12ABD6A3C00771148 /* CommonImagePicker.swift in Sources */,
+				4B5569662AC1685E00F9D29A /* Date+Ext.swift in Sources */,
 				4B35CBC42ABE8F8C00771148 /* ChatMessage.swift in Sources */,
 				4BB8C5F22ABC478E00F5868C /* KeyboardManager.swift in Sources */,
 				4B5569512ABFCC8300F9D29A /* AddFriendsV.swift in Sources */,
@@ -807,6 +838,7 @@
 				4B16AC9C2AB817E000928539 /* SplashV.swift in Sources */,
 				4B16AC942AB815C400928539 /* Defines.swift in Sources */,
 				4B35CB9F2ABD4D2500771148 /* UINavigationController+Ext.swift in Sources */,
+				4B55695A2AC1207000F9D29A /* ChatLogVM.swift in Sources */,
 				4B16AC9F2AB8189000928539 /* CommonTabV.swift in Sources */,
 				4BB8C5D32AB84FE500F5868C /* SplashVM.swift in Sources */,
 				4BB8C5DD2AB86A0300F5868C /* ThemeBtnStyle.swift in Sources */,
@@ -1175,6 +1207,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliMert/HidableTabView-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1258,6 +1298,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		4B5569632AC146BD00F9D29A /* HidableTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */;
+			productName = HidableTabView;
 		};
 		4BB8C5CF2AB81F0A00F5868C /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -16,20 +16,21 @@ struct HomeV: View {
     @State var chatUser: ChatUser?
     @State var shouldNaviToChatLogView = false
     @ObservedObject private var vm = HomeVM()
-//    private var chatLogVM = ChatLogVM(chatUser: nil)
+    private var chatLogVM = ChatLogVM(chatUser: nil)
+    
     var body: some View {
         if #available(iOS 16.0, *) {
             NavigationStack {
                 mainMessageView
             }
             .navigationDestination(isPresented: $shouldNaviToChatLogView) {
-//                ChatLogView(vm: chatLogVM)
+                ChatLogV(vm: chatLogVM)
             }
+            
         } else {
             NavigationView {
                 mainMessageView
             }
-            
         }
         
     }
@@ -45,7 +46,7 @@ struct HomeV: View {
                 // 커스텀 네비바
                 customNavBar
                 messageView
-    //            NavigationLink("", destination: ChatLogView(vm: chatLogVM), isActive: $shouldNaviToChatLogView)
+                NavigationLink("", destination: ChatLogV(vm: chatLogVM), isActive: $shouldNaviToChatLogView)
                 
             }
             .overlay(
@@ -57,6 +58,9 @@ struct HomeV: View {
             if isShowPlusFriends {
                 AddFriendsV(isShowPlusFriends: $isShowPlusFriends)
             }
+        }
+        .onAppear {
+            vm.fetchRecentMessage()
         }
         
     }
@@ -83,8 +87,8 @@ struct HomeV: View {
                 print(user.email)
                 self.shouldNaviToChatLogView.toggle()
                 self.chatUser = user
-//                self.chatLogVM.chatUser = user
-//                self.chatLogVM.fetchMessages()
+                self.chatLogVM.chatUser = user
+                self.chatLogVM.fetchMessages()
             })
         }
         
@@ -144,16 +148,18 @@ struct HomeV: View {
             ScrollView {
                 if vm.recentMessages.count > 0 {
                     ForEach(vm.recentMessages) { recentMsg in
-                        VStack {
+                        VStack(spacing: 0) {
+                            Spacer().frame(height: 10)
                             Button {
                                 let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMsg.fromId ? recentMsg.toId : recentMsg.fromId
                                 self.chatUser = .init(data: [
                                     FirebaseContants.email: recentMsg.email,
+                                    FirebaseContants.name: recentMsg.name,
                                     FirebaseContants.profileImageUrl: recentMsg.profileImageUrl,
                                     "uid": uid
                                 ])
-        //                        self.chatLogVM.chatUser = self.chatUser
-        //                        self.chatLogVM.fetchMessages()
+                                self.chatLogVM.chatUser = self.chatUser
+                                self.chatLogVM.fetchMessages()
                                 self.shouldNaviToChatLogView.toggle()
                             } label: {
                                 HStack {
@@ -168,7 +174,7 @@ struct HomeV: View {
                                         .shadow(radius: 5)
                                     Spacer().frame(width: 15)
                                     VStack(alignment: .leading) {
-                                        Text(recentMsg.email)
+                                        Text(recentMsg.name)
                                             .font(.system(size: 16, weight: .bold))
                                             .foregroundColor(Color(.label))
                                             .multilineTextAlignment(.leading)
@@ -184,7 +190,7 @@ struct HomeV: View {
                                         .foregroundColor(Color(.label))
                                 }
                             }
-
+                            Spacer().frame(height: 10)
                             Divider()
                                 .padding(.vertical, 8)
                         }

@@ -16,6 +16,8 @@ struct FirebaseContants {
     static let timestamp = "timestamp"
     static let profileImageUrl = "profileImageUrl"
     static let email = "email"
+    static let img = "img"
+    static let name = "name"
 }
 
 final class HomeVM: ObservableObject {

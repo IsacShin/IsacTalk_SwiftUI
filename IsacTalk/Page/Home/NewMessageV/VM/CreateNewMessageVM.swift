@@ -10,10 +10,10 @@ import Foundation
 final class CreateNewMessageVM: ObservableObject {
     @Published var users = [ChatUser]()
     init() {
-        fetchAllUser()
+        fetchChatUser()
     }
     
-    private func fetchAllUser() {
+    private func fetchChatUser() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let db = FirebaseManager.shared.firestore
         db.collection("users")

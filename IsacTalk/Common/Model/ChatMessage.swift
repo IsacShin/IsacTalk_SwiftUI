@@ -10,6 +10,7 @@ import FirebaseFirestoreSwift
 
 struct ChatMessage: Codable, Identifiable {
     @DocumentID var id: String?
-    let fromId, toId, text: String
+    let fromId, toId, text, img: String
+    let timestamp: Date
 }
 
