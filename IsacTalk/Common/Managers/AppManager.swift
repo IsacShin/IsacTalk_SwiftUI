@@ -32,6 +32,9 @@ struct AppManager {
             }
             guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
             FirebaseManager.shared.firestore.collection("users").document(uid).delete()
+            let rdb = FirebaseManager.shared.firestore.collection("recent_messages")
+            let mdb = FirebaseManager.shared.firestore.collection("messages")
+            AppManager.recentMsgDeleteCollectionDocuments(docId: uid)
             try! FirebaseManager.shared.auth.signOut()
             AppManager.isLogin.send(false)
             
@@ -39,6 +42,44 @@ struct AppManager {
                 completion()
             }
         })
+    }
+                                                        
+    static func recentMsgDeleteCollectionDocuments(docId: String, completion: (() -> Void)? = nil) {
+
+        let db = FirebaseManager.shared.firestore
+        
+        db.collection("recent_messages").document(docId).collection("messages").getDocuments { querySnapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    document.reference.delete()
+                }
+                
+                if let completion = completion {
+                    completion()
+                }
+            }
+        }
+    }
+    
+    static func messageDeleteSubCollectionDocuments(fromId: String, toId: String, completion: (() -> Void)?) {
+
+        let db = FirebaseManager.shared.firestore
+        
+        db.collection("messages").document(fromId).collection(toId).getDocuments { querySnapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    document.reference.delete()
+                }
+                
+                if let completion = completion {
+                    completion()
+                }
+            }
+        }
     }
 }
 

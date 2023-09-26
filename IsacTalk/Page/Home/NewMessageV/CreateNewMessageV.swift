@@ -50,6 +50,7 @@ struct CreateNewMessageV: View {
                                                 .overlay(Circle().stroke(style: .init(lineWidth: 2)).foregroundColor(Color(.label)))
                                             Text("\(user.name)(\(user.email))")
                                                 .multilineTextAlignment(.leading)
+                                                .font(.system(size: 18))
                                                 .foregroundColor(.black)
                                             Spacer()
                                         }

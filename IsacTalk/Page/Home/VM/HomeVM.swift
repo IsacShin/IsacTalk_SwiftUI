@@ -38,6 +38,20 @@ final class HomeVM: ObservableObject {
         fetchRecentMessage()
     }
     
+    func deleteMessage(toId: String) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        let rdb = FirebaseManager.shared.firestore.collection("recent_messages")
+        let mdb = FirebaseManager.shared.firestore.collection("messages")
+        
+        AppManager.recentMsgDeleteCollectionDocuments(docId: uid) {
+            AppManager.messageDeleteSubCollectionDocuments(fromId: uid, toId: toId) {
+                DispatchQueue.main.async {
+                    self.fetchRecentMessage()
+                }
+            }
+        }
+    }
+    
     func fetchRecentMessage() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         

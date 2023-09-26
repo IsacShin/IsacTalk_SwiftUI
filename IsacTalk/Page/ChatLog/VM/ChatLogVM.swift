@@ -56,11 +56,12 @@ class ChatLogVM: ObservableObject {
                             
                             // 읽음 표시
                             let messageId = change.document.documentID
+                            let combinedId = self.combineIds(id1: fromId, id2: toId)
 
-                            let readStatusRef = Database.database().reference().child("messages").child(messageId).child("readStatus").child(fromId)
+                            let readStatusRef = Database.database().reference().child("messages").child(combinedId).child(messageId).child("readStatus").child(fromId)
                             readStatusRef.setValue(true)
                         
-                            Database.database().reference().child("messages").child(messageId).child("readStatus").observe(DataEventType.value) { snapshot in
+                            Database.database().reference().child("messages").child(combinedId).child(messageId).child("readStatus").observe(DataEventType.value) { snapshot in
                                 let numberOfReaders = snapshot.childrenCount
                                 if let chatMessageIndex = self.chatMessages.firstIndex(where: { $0.id == messageId }) {
                                     self.chatMessages[chatMessageIndex].isRead = numberOfReaders > 1
@@ -142,6 +143,11 @@ class ChatLogVM: ObservableObject {
         }
     }
     
+    private func combineIds(id1: String, id2: String) -> String {
+        let sortedIds = [id1, id2].sorted()
+        return "\(sortedIds[0])\(sortedIds[1])"
+    }
+    
     private func sendMessage(messageData: [String: Any], sendImg: UIImage? = nil) {
         // 보내는 사람
         guard let fromId = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -150,7 +156,7 @@ class ChatLogVM: ObservableObject {
         guard let toId = chatUser?.uid else { return }
         
         guard let timestamp = messageData[FirebaseContants.timestamp] as? Timestamp else { return }
-        
+                
         // 발신자 문서
         let document = FirebaseManager.shared.firestore
             .collection("messages")

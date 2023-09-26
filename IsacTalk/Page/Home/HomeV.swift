@@ -17,8 +17,13 @@ struct HomeV: View {
     @State var shouldNaviToChatLogView = false
     @ObservedObject private var vm = HomeVM()
     private var chatLogVM = ChatLogVM(chatUser: nil)
+    @State var showAlert: Bool = false
+    @State var alertType: AlertType = .loginOutConfirm
+    
+    @State var deleteToId: String?
     
     var body: some View {
+        
         if #available(iOS 16.0, *) {
             NavigationStack {
                 mainMessageView
@@ -42,7 +47,8 @@ struct HomeV: View {
                     .frame(height: g.safeAreaInsets.top, alignment: .top)
                     .ignoresSafeArea()
             }
-            VStack {
+            
+            VStack(spacing: 0) {
                 // 커스텀 네비바
                 customNavBar
                 messageView
@@ -62,7 +68,6 @@ struct HomeV: View {
         .onAppear {
             vm.fetchRecentMessage()
         }
-        
     }
     
     private var newMessageButton: some View {
@@ -122,6 +127,7 @@ struct HomeV: View {
             
             Spacer()
             Button {
+                GADInterstitial.shared.loadFullAd()
                 withAnimation(.easeInOut(duration: 0.25)) {
                     self.isShowPlusFriends.toggle()
                 }
@@ -136,20 +142,20 @@ struct HomeV: View {
                         .foregroundColor(.white)
                 }
             }
-                
+            
         }
         .padding()
         .background(MAIN_COLOR)
-
+        
     }
     
     private var messageView: some View {
         GeometryReader { g in
-            ScrollView {
-                if vm.recentMessages.count > 0 {
+            if vm.recentMessages.count > 0 {
+                List {
                     ForEach(vm.recentMessages) { recentMsg in
-                        VStack(spacing: 0) {
-                            Spacer().frame(height: 10)
+                        VStack(alignment: .leading, spacing: 0) {
+                            Spacer().frame(height: 0)
                             Button {
                                 let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMsg.fromId ? recentMsg.toId : recentMsg.fromId
                                 self.chatUser = .init(data: [
@@ -171,7 +177,7 @@ struct HomeV: View {
                                         .cornerRadius(54)
                                         .overlay(Circle().stroke(style: StrokeStyle(lineWidth: 1)))
                                         .foregroundColor(.black)
-                                        .shadow(radius: 5)
+
                                     Spacer().frame(width: 15)
                                     VStack(alignment: .leading) {
                                         Text(recentMsg.name)
@@ -190,29 +196,50 @@ struct HomeV: View {
                                         .foregroundColor(Color(.label))
                                 }
                             }
-                            Spacer().frame(height: 10)
+                            Spacer().frame(height: 5)
                             Divider()
+                                .frame(height: 0.5)
+                                .background(Color.black)
                                 .padding(.vertical, 8)
+                                
+                                
                         }
-                        .padding(.horizontal)
-                        
-                    }
-                    .padding(.bottom, 50)
+                        .listRowInsets(.init(top: 1, leading: 0, bottom: -8, trailing: 1))
 
-                } else {
-                    VStack(alignment: .center) {
-                        Spacer()
-                        Text("진행중인 대화방이 없습니다.")
-                        Spacer()
                     }
-                    .offset(y: -40)
-                    .frame(minWidth: g.size.width, minHeight: g.size.height)
+                    .onDelete(perform: { offsets in
+                        if let firstIndex = offsets.first {
+                            let toId = vm.recentMessages[firstIndex].toId
+                            self.deleteToId = toId
+                            self.alertType = .chatDeleteConfirm
+                            self.showAlert.toggle()
+                        }
+                    })
+
                 }
+                .listStyle(PlainListStyle())
+                .alert(isPresented: $showAlert) {
+                    return Alert(title: Text(alertType.rawValue), primaryButton: .default(Text("확인"), action: {
+                        guard let toId = self.deleteToId else { return }
+                        self.vm.deleteMessage(toId: toId)
+                    }), secondaryButton: .cancel(Text("취소")))
+                }
+                .padding()
+
+                
+            } else {
+                VStack(alignment: .center) {
+                    Spacer()
+                    Text("진행중인 대화방이 없습니다.")
+                    Spacer()
+                }
+                .offset(y: -40)
+                .frame(minWidth: g.size.width, minHeight: g.size.height)
             }
         }
         
     }
-
+    
 }
 
 struct HomeV_Previews: PreviewProvider {

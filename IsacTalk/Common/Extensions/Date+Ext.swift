@@ -10,8 +10,16 @@ import Foundation
 extension Date {
     func formattedDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yy.MM.dd HH:mm"
-        return dateFormatter.string(from: self)
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        if Calendar.current.isDateInToday(self) {
+            dateFormatter.dateFormat = "a h:mm"
+        } else {
+            dateFormatter.dateFormat = "yy.M.dd HH:mm"
+        }
+        
+        let formattedDate = dateFormatter.string(from: self)
+        return formattedDate
     }
     
     func formattedTimestampDate() -> String {

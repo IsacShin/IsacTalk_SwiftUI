@@ -35,7 +35,7 @@ struct CommonTabV: View {
                     }
                     .tag(TabType.HOME)
 
-                Text("My")
+                MyPageV(selectTab: $selectTab)
                     .tabItem {
                         Image(systemName: "person.circle")
                         Text("My")

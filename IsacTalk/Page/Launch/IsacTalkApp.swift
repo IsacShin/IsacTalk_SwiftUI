@@ -8,6 +8,7 @@
 import SwiftUI
 import UserNotifications
 import Firebase
+import GoogleMobileAds
 
 enum RootViewType {
     case Splash
@@ -44,6 +45,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         FirebaseManager.shared.messaging.delegate = self
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         //파이어베이스 푸시 등록
         UNUserNotificationCenter.current().delegate = self

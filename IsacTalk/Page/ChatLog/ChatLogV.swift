@@ -8,6 +8,8 @@
 import SwiftUI
 import HidableTabView
 import SDWebImageSwiftUI
+import ImageViewer
+import ImageViewerRemote
 
 struct ChatLogV: View {
 
@@ -15,6 +17,8 @@ struct ChatLogV: View {
     @State var keyboardStatus: KeyboardManager.Status = .hide
     @ObservedObject var keyboardManager = KeyboardManager()
     @State var showPhotoPicker: Bool = false
+    @State var showImageViewer: Bool = false
+    @State var selectImage: String = ""
     
     init(vm: ChatLogVM) {
         self.vm = vm
@@ -26,11 +30,13 @@ struct ChatLogV: View {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
     }
     
     var body: some View {
         ZStack {
             messageView
+
             VStack(spacing: 0) {
                 Spacer()
                 chatBottomBar
@@ -48,6 +54,9 @@ struct ChatLogV: View {
             UITabBar.showTabBar(animated: true)
             // 리스너 순환참조 방지
             vm.firestoreListener?.remove()
+        }
+        .fullScreenCover(isPresented: $showImageViewer) {
+            ImageViewerRemote(imageURL: $selectImage, viewerShown: $showImageViewer)
         }
     }
     
@@ -115,12 +124,19 @@ struct ChatLogV: View {
                                             }
                                         }
                                         HStack {
-                                            WebImage(url: URL(string: message.img))
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(maxWidth: SCREEN_WIDTH - 100, maxHeight: 350)
+                                            Button {
+                                                self.selectImage = message.img
+                                                self.showImageViewer = true
+                                            } label: {
+                                                WebImage(url: URL(string: message.img))
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(maxWidth: SCREEN_WIDTH - 100, maxHeight: 350)
+                                                    
+                                            }
+
                                         }
-                                        .background(Color.init(red: 255/255, green: 228/255, blue: 1/255))
+                                        .background(Color.clear)
                                         .cornerRadius(8)
                                     }
                                     
@@ -129,12 +145,25 @@ struct ChatLogV: View {
                             } else {
                                 if message.img == "" {
                                     HStack {
+                                        VStack {
+                                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 35, height: 35)
+                                                .clipped()
+                                                .cornerRadius(50)
+                                                .overlay(Circle().stroke(style: StrokeStyle(lineWidth: 1)).foregroundColor(.white))
+                                            Text(vm.chatUser?.name ?? "")
+                                                .font(.system(size: 13))
+                                                .offset(y: -5)
+                                            Spacer()
+                                        }
                                         HStack {
                                             Text(message.text)
-                                                .foregroundColor(.black)
+                                                .foregroundColor(.white)
                                         }
                                         .padding()
-                                        .background(Color.init(red: 213/255, green: 213/255, blue: 213/255))
+                                        .background(Color.init(red: 103/255, green: 153/255, blue: 255/255))
                                         .cornerRadius(8)
                                         VStack {
                                             Spacer()
@@ -162,12 +191,17 @@ struct ChatLogV: View {
                                 } else {
                                     HStack {
                                         HStack {
-                                            WebImage(url: URL(string: message.img))
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(maxWidth: SCREEN_WIDTH - 100, maxHeight: 350)
+                                            Button {
+                                                self.selectImage = message.img
+                                                self.showImageViewer = true
+                                            } label: {
+                                                WebImage(url: URL(string: message.img))
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(maxWidth: SCREEN_WIDTH - 100, maxHeight: 350)
+                                            }
                                         }
-                                        .background(Color.init(red: 213/255, green: 213/255, blue: 213/255))
+                                        .background(Color.clear)
                                         .cornerRadius(8)
                                         VStack {
                                             Spacer()
@@ -198,6 +232,7 @@ struct ChatLogV: View {
                             }
                         }
                         .padding(.horizontal)
+                        .padding(.bottom, 5)
                     }
                     
                     HStack { Spacer() }
@@ -224,8 +259,6 @@ struct ChatLogV: View {
                         self.vm.handleSend(sendImg: sendImg)
                     }, maxCount: 1)
                 }
-                
-                    
             }
             
         }
@@ -270,8 +303,9 @@ struct ChatLogV: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .background(MAIN_COLOR)
+            .background(vm.chatText == "" ? Color(.darkGray) : MAIN_COLOR)
             .cornerRadius(4)
+            .disabled(vm.chatText == "")
 
         }
         .padding(.horizontal)

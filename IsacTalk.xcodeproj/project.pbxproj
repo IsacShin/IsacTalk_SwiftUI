@@ -50,6 +50,13 @@
 		4B55695E2AC133F500F9D29A /* ChatLogV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55695D2AC133F500F9D29A /* ChatLogV.swift */; };
 		4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 4B5569632AC146BD00F9D29A /* HidableTabView */; };
 		4B5569662AC1685E00F9D29A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569652AC1685E00F9D29A /* Date+Ext.swift */; };
+		4B5569692AC28E1900F9D29A /* ZoomImageV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569682AC28E1900F9D29A /* ZoomImageV.swift */; };
+		4B55696C2AC2A2CD00F9D29A /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 4B55696B2AC2A2CD00F9D29A /* ImageViewer */; };
+		4B55696E2AC2A2CD00F9D29A /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 4B55696D2AC2A2CD00F9D29A /* ImageViewerRemote */; };
+		4B5569712AC2AF1200F9D29A /* MyPageV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569702AC2AF1200F9D29A /* MyPageV.swift */; };
+		4B5569732AC2C2A000F9D29A /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569722AC2C2A000F9D29A /* VisualEffectBlur.swift */; };
+		4B5569762AC2C5D900F9D29A /* GADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569752AC2C5D900F9D29A /* GADBanner.swift */; };
+		4B5569792AC2C5FC00F9D29A /* GADInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569782AC2C5FC00F9D29A /* GADInterstitial.swift */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -123,6 +130,11 @@
 		4B5569592AC1207000F9D29A /* ChatLogVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogVM.swift; sourceTree = "<group>"; };
 		4B55695D2AC133F500F9D29A /* ChatLogV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogV.swift; sourceTree = "<group>"; };
 		4B5569652AC1685E00F9D29A /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		4B5569682AC28E1900F9D29A /* ZoomImageV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageV.swift; sourceTree = "<group>"; };
+		4B5569702AC2AF1200F9D29A /* MyPageV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageV.swift; sourceTree = "<group>"; };
+		4B5569722AC2C2A000F9D29A /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		4B5569752AC2C5D900F9D29A /* GADBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBanner.swift; sourceTree = "<group>"; };
+		4B5569782AC2C5FC00F9D29A /* GADInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADInterstitial.swift; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,10 +174,12 @@
 				4B35CBCF2ABE910300771148 /* FirebaseDatabaseSwift in Frameworks */,
 				4BB8C5F02ABC45D900F5868C /* CustomTextField in Frameworks */,
 				4B35CBC92ABE910300771148 /* FirebaseAuth in Frameworks */,
+				4B55696C2AC2A2CD00F9D29A /* ImageViewer in Frameworks */,
 				4B35CBD72ABE910300771148 /* FirebaseInstallations in Frameworks */,
 				4B35CBDF2ABE910300771148 /* FirebaseStorage in Frameworks */,
 				4B35CBD32ABE910300771148 /* FirebaseFirestore in Frameworks */,
 				4BB8C5D02AB81F0A00F5868C /* SDWebImageSwiftUI in Frameworks */,
+				4B55696E2AC2A2CD00F9D29A /* ImageViewerRemote in Frameworks */,
 				4B35CBD52ABE910300771148 /* FirebaseFirestoreSwift in Frameworks */,
 				4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */,
 				4B35CBCB2ABE910300771148 /* FirebaseCrashlytics in Frameworks */,
@@ -222,11 +236,13 @@
 		4B16AC9D2AB8188200928539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B5569742AC2C5C300F9D29A /* GADMob */,
 				4B5569522ABFE70300F9D29A /* ActivityView */,
 				4B35CBAF2ABD6A2600771148 /* YPImagePicker */,
 				4BB8C5DE2ABBF1B800F5868C /* LoadingView */,
 				4B16ACA02AB8189800928539 /* TabView */,
 				4BB8C5DC2AB86A0300F5868C /* ThemeBtnStyle.swift */,
+				4B5569722AC2C2A000F9D29A /* VisualEffectBlur.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +379,31 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
+		4B5569672AC28DCD00F9D29A /* ZoomImage */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569682AC28E1900F9D29A /* ZoomImageV.swift */,
+			);
+			path = ZoomImage;
+			sourceTree = "<group>";
+		};
+		4B55696F2AC2AF0600F9D29A /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569702AC2AF1200F9D29A /* MyPageV.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		4B5569742AC2C5C300F9D29A /* GADMob */ = {
+			isa = PBXGroup;
+			children = (
+				4B5569752AC2C5D900F9D29A /* GADBanner.swift */,
+				4B5569782AC2C5FC00F9D29A /* GADInterstitial.swift */,
+			);
+			path = GADMob;
+			sourceTree = "<group>";
+		};
 		4B95C6ED2AB80E72003CF206 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +472,8 @@
 		4B95C7242AB81351003CF206 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				4B55696F2AC2AF0600F9D29A /* MyPage */,
+				4B5569672AC28DCD00F9D29A /* ZoomImage */,
 				4B5569582AC1206000F9D29A /* ChatLog */,
 				4B35CBB32ABE863B00771148 /* Home */,
 				4B35CBA72ABD645200771148 /* Join */,
@@ -577,6 +620,8 @@
 				4B35CBDC2ABE910300771148 /* FirebaseRemoteConfig */,
 				4B35CBDE2ABE910300771148 /* FirebaseStorage */,
 				4B5569632AC146BD00F9D29A /* HidableTabView */,
+				4B55696B2AC2A2CD00F9D29A /* ImageViewer */,
+				4B55696D2AC2A2CD00F9D29A /* ImageViewerRemote */,
 			);
 			productName = IsacTalk;
 			productReference = 4B95C6F62AB80E72003CF206 /* IsacTalk.app */;
@@ -658,6 +703,7 @@
 				4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */,
 				4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
+				4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			productRefGroup = 4B95C6F72AB80E72003CF206 /* Products */;
 			projectDirPath = "";
@@ -805,11 +851,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5569762AC2C5D900F9D29A /* GADBanner.swift in Sources */,
 				4B16ACA52AB81B5C00928539 /* View+Ext.swift in Sources */,
 				4BB8C5DB2AB8696300F5868C /* AccessGuideVM.swift in Sources */,
 				4BB8C5E02ABBF1CC00F5868C /* CommonLoadingV.swift in Sources */,
 				4B35CBBB2ABE8D4400771148 /* CreateNewMessageVM.swift in Sources */,
 				4B35CBA12ABD4F1800771148 /* DeviceType.swift in Sources */,
+				4B5569732AC2C2A000F9D29A /* VisualEffectBlur.swift in Sources */,
 				4B5569542ABFE72500F9D29A /* ActivityView.swift in Sources */,
 				4B35CBA32ABD62C000771148 /* FirebaseManager.swift in Sources */,
 				4BB8C5E22ABBF20E00F5868C /* CommonIndicator.swift in Sources */,
@@ -821,6 +869,7 @@
 				4B55695E2AC133F500F9D29A /* ChatLogV.swift in Sources */,
 				4BB8C5D82AB8692A00F5868C /* AccessGuideV.swift in Sources */,
 				4B35CBA62ABD637D00771148 /* ChatUser.swift in Sources */,
+				4B5569692AC28E1900F9D29A /* ZoomImageV.swift in Sources */,
 				4B16AC972AB815F300928539 /* UIApplication+Ext.swift in Sources */,
 				4B35CBA92ABD645C00771148 /* JoinV.swift in Sources */,
 				4B35CBB12ABD6A3C00771148 /* CommonImagePicker.swift in Sources */,
@@ -833,6 +882,7 @@
 				4B35CBC02ABE8EC600771148 /* HomeVM.swift in Sources */,
 				4B5569572ABFED3F00F9D29A /* AddFriendsVM.swift in Sources */,
 				4B35CBAE2ABD68B900771148 /* String+Ext.swift in Sources */,
+				4B5569712AC2AF1200F9D29A /* MyPageV.swift in Sources */,
 				4B35CBB82ABE8CE200771148 /* CreateNewMessageV.swift in Sources */,
 				4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */,
 				4B16AC9C2AB817E000928539 /* SplashV.swift in Sources */,
@@ -841,6 +891,7 @@
 				4B55695A2AC1207000F9D29A /* ChatLogVM.swift in Sources */,
 				4B16AC9F2AB8189000928539 /* CommonTabV.swift in Sources */,
 				4BB8C5D32AB84FE500F5868C /* SplashVM.swift in Sources */,
+				4B5569792AC2C5FC00F9D29A /* GADInterstitial.swift in Sources */,
 				4BB8C5DD2AB86A0300F5868C /* ThemeBtnStyle.swift in Sources */,
 				4B35CBB52ABE864D00771148 /* HomeV.swift in Sources */,
 				4BB8C5E82ABC13E600F5868C /* LoginVM.swift in Sources */,
@@ -1215,6 +1266,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1303,6 +1362,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */;
 			productName = HidableTabView;
+		};
+		4B55696B2AC2A2CD00F9D29A /* ImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewer;
+		};
+		4B55696D2AC2A2CD00F9D29A /* ImageViewerRemote */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewerRemote;
 		};
 		4BB8C5CF2AB81F0A00F5868C /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

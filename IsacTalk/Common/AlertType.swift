@@ -16,4 +16,8 @@ enum AlertType: String, CaseIterable {
     case addFriendsSuccess = "친구가 추가되었습니다."
     case addFriendsFailed = "자신을 친구로 추가할 수 없습니다."
     case isValidFailed = "이미 추가한 친구 입니다."
+    case loginOutConfirm = "로그아웃 하시겠습니까?"
+    case chatDeleteConfirm = "대화방을 나가시겠습니까?"
+    case removeMemberConfirm = "회원을 탈퇴하시겠습니까?\n탈퇴하실 경우 대화중인 채팅방 모두 삭제됩니다."
+
 }
