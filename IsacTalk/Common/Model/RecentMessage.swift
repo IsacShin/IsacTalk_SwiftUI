@@ -16,6 +16,7 @@ struct RecentMessage: Codable, Identifiable {
     let fromId, toId: String
     let profileImageUrl: String
     let timestamp: Date
+    let pushToken: String
     
     var timeAgo: String {
         let formatter = RelativeDateTimeFormatter()

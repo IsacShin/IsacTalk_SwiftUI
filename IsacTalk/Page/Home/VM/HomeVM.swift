@@ -19,6 +19,7 @@ struct FirebaseContants {
     static let img = "img"
     static let name = "name"
     static let isRead = "isRead"
+    static let pushToken = "pushToken"
 }
 
 final class HomeVM: ObservableObject {

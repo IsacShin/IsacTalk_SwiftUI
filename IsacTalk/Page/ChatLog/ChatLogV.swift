@@ -49,6 +49,7 @@ struct ChatLogV: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             UITabBar.hideTabBar(animated: false)
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         .onDisappear {
             UITabBar.showTabBar(animated: true)
@@ -57,6 +58,9 @@ struct ChatLogV: View {
         }
         .fullScreenCover(isPresented: $showImageViewer) {
             ImageViewerRemote(imageURL: $selectImage, viewerShown: $showImageViewer)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
     }
     
@@ -190,6 +194,19 @@ struct ChatLogV: View {
                                     }
                                 } else {
                                     HStack {
+                                        VStack {
+                                            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 35, height: 35)
+                                                .clipped()
+                                                .cornerRadius(50)
+                                                .overlay(Circle().stroke(style: StrokeStyle(lineWidth: 1)).foregroundColor(.white))
+                                            Text(vm.chatUser?.name ?? "")
+                                                .font(.system(size: 13))
+                                                .offset(y: -5)
+                                            Spacer()
+                                        }
                                         HStack {
                                             Button {
                                                 self.selectImage = message.img

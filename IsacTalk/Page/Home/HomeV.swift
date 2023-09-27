@@ -155,14 +155,15 @@ struct HomeV: View {
                 List {
                     ForEach(vm.recentMessages) { recentMsg in
                         VStack(alignment: .leading, spacing: 0) {
-                            Spacer().frame(height: 0)
+                            Spacer().frame(height: 5)
                             Button {
                                 let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMsg.fromId ? recentMsg.toId : recentMsg.fromId
                                 self.chatUser = .init(data: [
                                     FirebaseContants.email: recentMsg.email,
                                     FirebaseContants.name: recentMsg.name,
                                     FirebaseContants.profileImageUrl: recentMsg.profileImageUrl,
-                                    "uid": uid
+                                    "uid": uid,
+                                    FirebaseContants.pushToken: recentMsg.pushToken
                                 ])
                                 self.chatLogVM.chatUser = self.chatUser
                                 self.chatLogVM.fetchMessages()
@@ -186,6 +187,7 @@ struct HomeV: View {
                                             .multilineTextAlignment(.leading)
                                         Spacer().frame(height: 5)
                                         Text(recentMsg.text)
+                                            .lineLimit(2)
                                             .font(.system(size: 14))
                                             .foregroundColor(Color(.lightGray))
                                             .multilineTextAlignment(.leading)
@@ -204,7 +206,7 @@ struct HomeV: View {
                                 
                                 
                         }
-                        .listRowInsets(.init(top: 1, leading: 0, bottom: -8, trailing: 1))
+                        .listRowInsets(.init(top: 8, leading: 1, bottom: -8, trailing: 1))
 
                     }
                     .onDelete(perform: { offsets in
@@ -224,8 +226,7 @@ struct HomeV: View {
                         self.vm.deleteMessage(toId: toId)
                     }), secondaryButton: .cancel(Text("취소")))
                 }
-                .padding()
-
+                .padding(.horizontal)
                 
             } else {
                 VStack(alignment: .center) {

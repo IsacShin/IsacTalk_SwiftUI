@@ -13,5 +13,6 @@ struct ChatMessage: Codable, Identifiable {
     let fromId, toId, text, img: String
     var isRead: Bool
     let timestamp: Date
+    let pushToken: String
 }
 

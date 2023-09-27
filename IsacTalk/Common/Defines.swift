@@ -42,3 +42,7 @@ let FULL_SCREEN_ADMOBKEY        = "ca-app-pub-6912457818283583/6648367544"
 
 let TEST_BANNER_ADMOBKEY        = "ca-app-pub-3940256099942544/2934735716"
 let TEST_FULL_ADMOBKEY          = "ca-app-pub-3940256099942544/4411468910"
+
+// MARK: - FCM관련
+let SERVER_KEY              = "key=AAAAdKKV6Fw:APA91bHLLUlljBLPhvqSmQcVEk4DKiJp_CGomE7I2_fEbl3eq5Yz7Sg4NhN3LprJI2jm5jiAVEKBe_L-nF-ogA_JoaHr-W3DfGc8dm6jimYns3GRXIAx4bIWuGPa_8Z-mlau2KZbdFWs"
+let FCM_URL                 = "https://fcm.googleapis.com/fcm/send" 

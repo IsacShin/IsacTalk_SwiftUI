@@ -42,9 +42,9 @@ class LoginVM: ObservableObject {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
             return
         }
-
-        FirebaseManager.shared.firestore.collection("users")
-            .document(uid).getDocument { snapshot, err in
+        let docRef = FirebaseManager.shared.firestore.collection("users").document(uid)
+        docRef
+            .getDocument { snapshot, err in
                 if let err = err {
                     print("Failed to fetch current user:", err)
                 }
@@ -53,10 +53,23 @@ class LoginVM: ObservableObject {
                     return
                 }
                 self.isLoginFailed = false
-
+                
                 AppManager.loginUser = .init(data: data)
                 AppManager.isLogin.send(true)
-
+                FirebaseManager.shared.messaging.token { result, error in
+                    if let error = error {
+                        print("Error fetching remote instance ID: \(error)")
+                    } else if let result = result {
+                        docRef.updateData([
+                            FirebaseContants.pushToken: result
+                        ]) { err in
+                            if let err = err {
+                                print("Error updating document: \(err)")
+                            }
+                            print("Update Push Token!")
+                        }
+                    }
+                }
             }
     }
     

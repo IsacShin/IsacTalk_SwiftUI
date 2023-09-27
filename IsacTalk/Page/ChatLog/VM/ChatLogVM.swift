@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Firebase
+import Alamofire
+import SwiftyJSON
 
 class ChatLogVM: ObservableObject {
     
@@ -22,7 +24,7 @@ class ChatLogVM: ObservableObject {
     
     init(chatUser: ChatUser?) {
         self.chatUser = chatUser
-        
+
         fetchMessages()
     }
     
@@ -163,8 +165,9 @@ class ChatLogVM: ObservableObject {
             .document(fromId)
             .collection(toId)
             .document(timestamp.dateValue().formattedTimestampDate())
-        
-        document.setData(messageData) { err in
+        var fromData = messageData
+        fromData.updateValue(self.chatUser?.pushToken ?? "", forKey: FirebaseContants.pushToken)
+        document.setData(fromData) { err in
             if let err = err {
                 self.errMsg = "Failed to save message into Firestore: \(err)"
                 print(err)
@@ -175,18 +178,20 @@ class ChatLogVM: ObservableObject {
             
             self.persistRecentMessage(sendImg: sendImg)
             
-            self.chatText = ""
             self.count += 1
         }
         
+        
         // 수신자 문서
+        var toData = messageData
+        toData.updateValue(AppManager.loginUser?.pushToken ?? "", forKey: FirebaseContants.pushToken)
         let recipientMessageDocument = FirebaseManager.shared.firestore
             .collection("messages")
             .document(toId)
             .collection(fromId)
             .document(timestamp.dateValue().formattedTimestampDate())
         
-        recipientMessageDocument.setData(messageData) { err in
+        recipientMessageDocument.setData(toData) { err in
             if let err = err {
                 self.errMsg = "Failed to save message into Firestore: \(err)"
                 print(err)
@@ -194,7 +199,45 @@ class ChatLogVM: ObservableObject {
             }
             
             print("Success recipent save Message!!")
+            self.sendFcm(sendImg: sendImg)
         }
+    }
+    
+    private func sendFcm(sendImg: UIImage? = nil) {
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json",
+            "Authorization" : SERVER_KEY
+        ]
+        
+        var notificationModel = NotificationModel()
+        
+        notificationModel.to = self.chatUser?.pushToken
+        notificationModel.notification.title = AppManager.loginUser?.name
+        notificationModel.notification.body = sendImg == nil ? self.chatText : "사진을 보냈습니다."
+        notificationModel.notification.badge = 1
+        notificationModel.data.title = AppManager.loginUser?.name
+        notificationModel.data.body = sendImg == nil ? self.chatText : "사진을 보냈습니다."
+        notificationModel.data.badge = 1
+        notificationModel.content_available = true
+        notificationModel.mutable_content = true
+        
+        let params = notificationModel.toDictionary()
+        AF.request(FCM_URL, method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding.default,
+                   headers: header).response { response in
+            switch response.result {
+            case .success(let data):
+                if let data = data {
+                    print(JSON(data))
+                    self.chatText = ""
+                }
+
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+        
     }
     
     // 최근 메세지 저장
@@ -215,7 +258,8 @@ class ChatLogVM: ObservableObject {
             FirebaseContants.name: chatUser.name,
             FirebaseContants.toId: toId,
             FirebaseContants.profileImageUrl: chatUser.profileImageUrl,
-            FirebaseContants.email: chatUser.email
+            FirebaseContants.email: chatUser.email,
+            FirebaseContants.pushToken: chatUser.pushToken
         ] as [String: Any]
         
         document.setData(data) { err in
@@ -231,12 +275,13 @@ class ChatLogVM: ObservableObject {
         guard let currentUser = AppManager.loginUser else { return }
         let recipientRecentMessageDictionary = [
             FirebaseContants.timestamp: Timestamp(),
-            FirebaseContants.text: self.chatText,
+            FirebaseContants.text: sendImg == nil ? self.chatText : "사진을 보냈습니다.",
             FirebaseContants.name: currentUser.name,
             FirebaseContants.fromId: uid,
             FirebaseContants.toId: toId,
             FirebaseContants.profileImageUrl: currentUser.profileImageUrl,
-            FirebaseContants.email: currentUser.email
+            FirebaseContants.email: currentUser.email,
+            FirebaseContants.pushToken: currentUser.pushToken
         ] as [String : Any]
         
         FirebaseManager.shared.firestore

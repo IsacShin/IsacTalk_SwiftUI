@@ -57,6 +57,9 @@
 		4B5569732AC2C2A000F9D29A /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569722AC2C2A000F9D29A /* VisualEffectBlur.swift */; };
 		4B5569762AC2C5D900F9D29A /* GADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569752AC2C5D900F9D29A /* GADBanner.swift */; };
 		4B5569792AC2C5FC00F9D29A /* GADInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569782AC2C5FC00F9D29A /* GADInterstitial.swift */; };
+		4B55697B2AC3D96200F9D29A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55697A2AC3D96200F9D29A /* NotificationModel.swift */; };
+		4B55697E2AC3FE0000F9D29A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4B55697D2AC3FE0000F9D29A /* Alamofire */; };
+		4B5569812AC4124C00F9D29A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4B5569802AC4124C00F9D29A /* SwiftyJSON */; };
 		4B95C6FA2AB80E72003CF206 /* IsacTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */; };
 		4B95C6FE2AB80E73003CF206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B95C6FD2AB80E73003CF206 /* Assets.xcassets */; };
 		4B95C70B2AB80E73003CF206 /* IsacTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C70A2AB80E73003CF206 /* IsacTalkTests.swift */; };
@@ -135,6 +138,7 @@
 		4B5569722AC2C2A000F9D29A /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		4B5569752AC2C5D900F9D29A /* GADBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBanner.swift; sourceTree = "<group>"; };
 		4B5569782AC2C5FC00F9D29A /* GADInterstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADInterstitial.swift; sourceTree = "<group>"; };
+		4B55697A2AC3D96200F9D29A /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		4B95C6F62AB80E72003CF206 /* IsacTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsacTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B95C6F92AB80E72003CF206 /* IsacTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsacTalkApp.swift; sourceTree = "<group>"; };
 		4B95C6FD2AB80E73003CF206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				4BB8C5F02ABC45D900F5868C /* CustomTextField in Frameworks */,
 				4B35CBC92ABE910300771148 /* FirebaseAuth in Frameworks */,
 				4B55696C2AC2A2CD00F9D29A /* ImageViewer in Frameworks */,
+				4B55697E2AC3FE0000F9D29A /* Alamofire in Frameworks */,
 				4B35CBD72ABE910300771148 /* FirebaseInstallations in Frameworks */,
 				4B35CBDF2ABE910300771148 /* FirebaseStorage in Frameworks */,
 				4B35CBD32ABE910300771148 /* FirebaseFirestore in Frameworks */,
@@ -184,6 +189,7 @@
 				4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */,
 				4B35CBCB2ABE910300771148 /* FirebaseCrashlytics in Frameworks */,
 				4B35CBDD2ABE910300771148 /* FirebaseRemoteConfig in Frameworks */,
+				4B5569812AC4124C00F9D29A /* SwiftyJSON in Frameworks */,
 				4B35CBD92ABE910300771148 /* FirebaseMessaging in Frameworks */,
 				4B35CBD12ABE910300771148 /* FirebaseDynamicLinks in Frameworks */,
 				4B35CBC72ABE910300771148 /* FirebaseAnalytics in Frameworks */,
@@ -272,6 +278,7 @@
 				4B35CBA52ABD637D00771148 /* ChatUser.swift */,
 				4B35CBC12ABE8F5000771148 /* RecentMessage.swift */,
 				4B35CBC32ABE8F8C00771148 /* ChatMessage.swift */,
+				4B55697A2AC3D96200F9D29A /* NotificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,6 +629,8 @@
 				4B5569632AC146BD00F9D29A /* HidableTabView */,
 				4B55696B2AC2A2CD00F9D29A /* ImageViewer */,
 				4B55696D2AC2A2CD00F9D29A /* ImageViewerRemote */,
+				4B55697D2AC3FE0000F9D29A /* Alamofire */,
+				4B5569802AC4124C00F9D29A /* SwiftyJSON */,
 			);
 			productName = IsacTalk;
 			productReference = 4B95C6F62AB80E72003CF206 /* IsacTalk.app */;
@@ -704,6 +713,8 @@
 				4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
 				4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+				4B55697C2AC3FE0000F9D29A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4B55697F2AC4124C00F9D29A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 4B95C6F72AB80E72003CF206 /* Products */;
 			projectDirPath = "";
@@ -889,6 +900,7 @@
 				4B16AC942AB815C400928539 /* Defines.swift in Sources */,
 				4B35CB9F2ABD4D2500771148 /* UINavigationController+Ext.swift in Sources */,
 				4B55695A2AC1207000F9D29A /* ChatLogVM.swift in Sources */,
+				4B55697B2AC3D96200F9D29A /* NotificationModel.swift in Sources */,
 				4B16AC9F2AB8189000928539 /* CommonTabV.swift in Sources */,
 				4BB8C5D32AB84FE500F5868C /* SplashVM.swift in Sources */,
 				4B5569792AC2C5FC00F9D29A /* GADInterstitial.swift in Sources */,
@@ -1075,7 +1087,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isac.IsacTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1116,7 +1128,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isac.IsacTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1274,6 +1286,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4B55697C2AC3FE0000F9D29A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		4B55697F2AC4124C00F9D29A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1372,6 +1400,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
 			productName = ImageViewerRemote;
+		};
+		4B55697D2AC3FE0000F9D29A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B55697C2AC3FE0000F9D29A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4B5569802AC4124C00F9D29A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B55697F2AC4124C00F9D29A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		4BB8C5CF2AB81F0A00F5868C /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
