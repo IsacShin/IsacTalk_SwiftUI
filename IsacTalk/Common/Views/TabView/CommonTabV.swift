@@ -27,29 +27,15 @@ struct CommonTabV: View {
     
     var body: some View {
         if isLogin {
-            NavigationView {
-                TabView(selection: $selectTab) {
-                    HomeV()
-                        .tabItem {
-                            Image(systemName: "person.3")
-                            Text("Home")
-                        }
-                        .tag(TabType.HOME)
-
-                    MyPageV(selectTab: $selectTab)
-                        .tabItem {
-                            Image(systemName: "person.circle")
-                            Text("My")
-                        }
-                        .tag(TabType.MYPAGE)
-
+            if #available(iOS 16.0, *) {
+                NavigationStack {
+                    tabV
                 }
-                .accentColor(MAIN_COLOR)
-                .onReceive(AppManager.isLogin) {
-                    isLogin = $0
+            } else {
+                NavigationView {
+                    tabV
                 }
             }
-            
         } else {
             withAnimation {
                 LoginV()
@@ -58,6 +44,29 @@ struct CommonTabV: View {
                         isLogin = $0
                     }
             }
+        }
+    }
+    
+    private var tabV: some View {
+        TabView(selection: $selectTab) {
+            HomeV()
+                .tabItem {
+                    Image(systemName: "person.3")
+                    Text("Home")
+                }
+                .tag(TabType.HOME)
+
+            MyPageV(selectTab: $selectTab)
+                .tabItem {
+                    Image(systemName: "person.circle")
+                    Text("My")
+                }
+                .tag(TabType.MYPAGE)
+
+        }
+        .accentColor(MAIN_COLOR)
+        .onReceive(AppManager.isLogin) {
+            isLogin = $0
         }
     }
 }
