@@ -27,26 +27,29 @@ struct CommonTabV: View {
     
     var body: some View {
         if isLogin {
-            TabView(selection: $selectTab) {
-                HomeV()
-                    .tabItem {
-                        Image(systemName: "person.3")
-                        Text("Home")
-                    }
-                    .tag(TabType.HOME)
+            NavigationView {
+                TabView(selection: $selectTab) {
+                    HomeV()
+                        .tabItem {
+                            Image(systemName: "person.3")
+                            Text("Home")
+                        }
+                        .tag(TabType.HOME)
 
-                MyPageV(selectTab: $selectTab)
-                    .tabItem {
-                        Image(systemName: "person.circle")
-                        Text("My")
-                    }
-                    .tag(TabType.MYPAGE)
+                    MyPageV(selectTab: $selectTab)
+                        .tabItem {
+                            Image(systemName: "person.circle")
+                            Text("My")
+                        }
+                        .tag(TabType.MYPAGE)
 
+                }
+                .accentColor(MAIN_COLOR)
+                .onReceive(AppManager.isLogin) {
+                    isLogin = $0
+                }
             }
-            .accentColor(MAIN_COLOR)
-            .onReceive(AppManager.isLogin) {
-                isLogin = $0
-            }
+            
         } else {
             withAnimation {
                 LoginV()

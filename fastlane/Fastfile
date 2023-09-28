@@ -1,0 +1,56 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+  desc "build app and upload to App Store"
+  lane :beta do
+    match(type: "appstore")
+    clear_derived_data
+    increment_build_number(
+        build_number: latest_testflight_build_number + 1
+    )
+    build_app(workspace: "IsacTalk.xcworkspace", scheme: "IsacTalk")
+    upload_to_testflight
+    slack(
+      message: "Testflight 배포 성공",
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+  end
+  lane :release do
+    match(type: "appstore")
+    clear_derived_data
+    increment_build_number(
+        build_number: latest_testflight_build_number + 1
+    )
+    build_app(workspace: "IsacTalk.xcworkspace", scheme: "IsacTalk")
+    upload_to_app_store(skip_metadata: true, skip_screenshots: true)
+    slack(
+      message: "Testflight 배포 성공",
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+  end
+
+
+platform :ios do
+
+  error do |lane, exception, options|
+    slack(
+      message: "에러 발생 : #{exception}",
+      success: false,
+      slack_url: "https://hooks.slack.com/services/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"
+)
+  end
+end

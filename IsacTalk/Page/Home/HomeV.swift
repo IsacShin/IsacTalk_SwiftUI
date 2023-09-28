@@ -24,19 +24,7 @@ struct HomeV: View {
     
     var body: some View {
         
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                mainMessageView
-            }
-            .navigationDestination(isPresented: $shouldNaviToChatLogView) {
-                ChatLogV(vm: chatLogVM)
-            }
-            
-        } else {
-            NavigationView {
-                mainMessageView
-            }
-        }
+        mainMessageView
         
     }
     

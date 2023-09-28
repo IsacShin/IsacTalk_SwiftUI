@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import HidableTabView
 import SDWebImageSwiftUI
 import ImageViewer
 import ImageViewerRemote
@@ -26,7 +25,6 @@ struct ChatLogV: View {
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.backgroundColor = UIColor(hex: "48CFAD")
-        UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
@@ -35,6 +33,14 @@ struct ChatLogV: View {
     
     var body: some View {
         ZStack {
+            ZStack(alignment: .top) {
+                GeometryReader { g in
+                    MAIN_COLOR
+                        .frame(height: g.safeAreaInsets.top, alignment: .top)
+                        .ignoresSafeArea()
+                }
+            }
+            
             messageView
 
             VStack(spacing: 0) {
@@ -46,13 +52,10 @@ struct ChatLogV: View {
             self.endEditing(true)
         }
         .navigationTitle(vm.chatUser?.name ?? "")
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            UITabBar.hideTabBar(animated: false)
             UIApplication.shared.applicationIconBadgeNumber = 0
         }
         .onDisappear {
-            UITabBar.showTabBar(animated: true)
             // 리스너 순환참조 방지
             vm.firestoreListener?.remove()
         }

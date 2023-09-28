@@ -48,7 +48,6 @@
 		4B5569572ABFED3F00F9D29A /* AddFriendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569562ABFED3F00F9D29A /* AddFriendsVM.swift */; };
 		4B55695A2AC1207000F9D29A /* ChatLogVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569592AC1207000F9D29A /* ChatLogVM.swift */; };
 		4B55695E2AC133F500F9D29A /* ChatLogV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55695D2AC133F500F9D29A /* ChatLogV.swift */; };
-		4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 4B5569632AC146BD00F9D29A /* HidableTabView */; };
 		4B5569662AC1685E00F9D29A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569652AC1685E00F9D29A /* Date+Ext.swift */; };
 		4B5569692AC28E1900F9D29A /* ZoomImageV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5569682AC28E1900F9D29A /* ZoomImageV.swift */; };
 		4B55696C2AC2A2CD00F9D29A /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 4B55696B2AC2A2CD00F9D29A /* ImageViewer */; };
@@ -186,7 +185,6 @@
 				4BB8C5D02AB81F0A00F5868C /* SDWebImageSwiftUI in Frameworks */,
 				4B55696E2AC2A2CD00F9D29A /* ImageViewerRemote in Frameworks */,
 				4B35CBD52ABE910300771148 /* FirebaseFirestoreSwift in Frameworks */,
-				4B5569642AC146BD00F9D29A /* HidableTabView in Frameworks */,
 				4B35CBCB2ABE910300771148 /* FirebaseCrashlytics in Frameworks */,
 				4B35CBDD2ABE910300771148 /* FirebaseRemoteConfig in Frameworks */,
 				4B5569812AC4124C00F9D29A /* SwiftyJSON in Frameworks */,
@@ -626,7 +624,6 @@
 				4B35CBDA2ABE910300771148 /* FirebasePerformance */,
 				4B35CBDC2ABE910300771148 /* FirebaseRemoteConfig */,
 				4B35CBDE2ABE910300771148 /* FirebaseStorage */,
-				4B5569632AC146BD00F9D29A /* HidableTabView */,
 				4B55696B2AC2A2CD00F9D29A /* ImageViewer */,
 				4B55696D2AC2A2CD00F9D29A /* ImageViewerRemote */,
 				4B55697D2AC3FE0000F9D29A /* Alamofire */,
@@ -711,7 +708,6 @@
 				4BB8C5CE2AB81F0A00F5868C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				4BB8C5EE2ABC45D900F5868C /* XCRemoteSwiftPackageReference "SwiftUI-Custom-TextField" */,
 				4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */,
 				4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 				4B55697C2AC3FE0000F9D29A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4B55697F2AC4124C00F9D29A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
@@ -1066,7 +1062,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IsacTalk/IsacTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"IsacTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				ENABLE_PREVIEWS = YES;
@@ -1087,7 +1083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isac.IsacTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1107,7 +1103,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = IsacTalk/IsacTalk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"IsacTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				ENABLE_PREVIEWS = YES;
@@ -1128,12 +1124,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isac.IsacTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1147,7 +1144,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -1168,7 +1165,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -1188,7 +1185,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -1207,7 +1204,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = PQADV43RTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -1268,14 +1265,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.0.0;
-			};
-		};
-		4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AliMert/HidableTabView-SwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
 			};
 		};
 		4B55696A2AC2A2CD00F9D29A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
@@ -1385,11 +1374,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B35CBC52ABE910300771148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
-		};
-		4B5569632AC146BD00F9D29A /* HidableTabView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B5569622AC146BD00F9D29A /* XCRemoteSwiftPackageReference "HidableTabView-SwiftUI" */;
-			productName = HidableTabView;
 		};
 		4B55696B2AC2A2CD00F9D29A /* ImageViewer */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -41,8 +41,6 @@ final class HomeVM: ObservableObject {
     
     func deleteMessage(toId: String) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        let rdb = FirebaseManager.shared.firestore.collection("recent_messages")
-        let mdb = FirebaseManager.shared.firestore.collection("messages")
         
         AppManager.recentMsgDeleteCollectionDocuments(docId: uid) {
             AppManager.messageDeleteSubCollectionDocuments(fromId: uid, toId: toId) {
