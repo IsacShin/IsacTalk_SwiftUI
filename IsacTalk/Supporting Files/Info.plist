@@ -4,6 +4,8 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6912457818283583~9589391506</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

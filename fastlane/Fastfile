@@ -26,7 +26,7 @@ default_platform(:ios)
     upload_to_testflight
     slack(
       message: "Testflight 배포 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
     )
   end
   lane :release do
@@ -38,8 +38,8 @@ default_platform(:ios)
     build_app(workspace: "IsacTalk.xcworkspace", scheme: "IsacTalk")
     upload_to_app_store(skip_metadata: true, skip_screenshots: true)
     slack(
-      message: "Testflight 배포 성공",
-      slack_url: "https://hooks.slack.com/services/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"
+      message: "Appstore 배포 성공",
+      slack_url: "https://hooks.slack.com/services/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"
     )
   end
 
@@ -50,7 +50,7 @@ platform :ios do
     slack(
       message: "에러 발생 : #{exception}",
       success: false,
-      slack_url: "https://hooks.slack.com/services/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"
+      slack_url: "https://hooks.slack.com/services/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"
 )
   end
 end
